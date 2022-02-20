@@ -3,7 +3,7 @@ import s from './Main.module.css'
 import poster from "../../poster.png";
 
 const Main = () => {
-    return <div className={s.content}>
+    return <div>
         <img src={poster} alt="poster"/>
         <div>
             <h1>Bread is...</h1>
