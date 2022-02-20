@@ -1,0 +1,27 @@
+.avatar {
+    float: left;
+    width: 128px;
+    height: 128px;
+}
+
+.table {
+    display: table;
+}
+
+.tableRow {
+    display: table-row;
+}
+
+.tableHead {
+    display: table-header-group;
+    font-weight: bold;
+}
+
+.tableCell {
+    display: table-cell;
+    padding-left: 40px;
+}
+
+.tableBody {
+    display: table-row-group;
+}

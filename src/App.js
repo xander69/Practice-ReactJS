@@ -15,8 +15,8 @@ const App = () => {
         <Header/>
         <Navbar/>
         <div className='app-wrapper-content'>
-            <Main/>
-            {/*<Profile/>*/}
+            {/*<Main/>*/}
+            <Profile/>
             {/*<News/>*/}
             {/*<Dialogs/>*/}
             {/*<Music/>*/}
