@@ -1,8 +1,8 @@
 .app-wrapper {
   display: grid;
-  grid-template-rows: 60px 1fr 60px;
+  grid-template-rows: 80px 1fr 60px;
   grid-template-columns: 2fr 10fr;
-  grid-gap: 10px;
+  /*grid-gap: 10px;*/
   grid-template-areas: "h h" "n c" "f f";
   width: 1200px;
   margin: 0 auto;
@@ -10,28 +10,46 @@
 
 .header {
   grid-area: h;
-  background-color: green;
-  padding: 20px;
+  background-color: saddlebrown;
+  display: block;
+  padding: 10px;
 }
 
 .header img {
+  padding-right: 20px;
+  width: 60px;
   height: 60px;
+  float: right;
+}
+
+.header div {
+  color: burlywood;
+  font-size: 24pt;
+  font-weight: bold;
+  font-style: italic;
+  padding-left: 20px;
+  padding-top: 5px;
 }
 
 .content {
   grid-area: c;
-  background-color: cornflowerblue;
+  background-color: moccasin;
+}
+
+.content div {
   padding: 20px;
 }
 
 .navbar {
   grid-area: n;
   background-color: burlywood;
-  padding: 20px;
 }
 
 .footer {
   grid-area: f;
-  background-color: indianred;
+  background-color: saddlebrown;
   padding: 20px;
+  color: burlywood;
+  text-align: right;
+  font-style: italic;
 }
