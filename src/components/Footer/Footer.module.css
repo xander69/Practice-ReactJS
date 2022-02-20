@@ -1,0 +1,8 @@
+.footer {
+    grid-area: f;
+    background-color: saddlebrown;
+    padding: 20px;
+    color: burlywood;
+    text-align: right;
+    font-style: italic;
+}

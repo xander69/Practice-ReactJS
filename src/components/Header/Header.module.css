@@ -1,0 +1,22 @@
+.header {
+    grid-area: h;
+    background-color: saddlebrown;
+    display: block;
+    padding: 10px;
+}
+
+.header img {
+    padding-right: 20px;
+    width: 60px;
+    height: 60px;
+    float: right;
+}
+
+.header div {
+    color: burlywood;
+    font-size: 24pt;
+    font-weight: bold;
+    font-style: italic;
+    padding-left: 20px;
+    padding-top: 5px;
+}

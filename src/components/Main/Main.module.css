@@ -1,0 +1,8 @@
+.content {
+    grid-area: c;
+    background-color: moccasin;
+}
+
+.content div {
+    padding: 20px;
+}
