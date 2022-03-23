@@ -1,4 +1,5 @@
 import * as util from './util'
+import {rerenderEntireTree} from './render'
 
 let postsData = [
     {
@@ -73,6 +74,7 @@ export let addPost = (postMessage) => {
         likeCount: 0,
         avatar: util.defaultAvatar
     })
+    rerenderEntireTree(state)
 }
 
 export default state
