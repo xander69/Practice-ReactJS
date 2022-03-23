@@ -1,5 +1,6 @@
 import React from 'react';
 import Post from "./Post/Post";
+import {addPostActionCreator, updateNewPostTextActionCreator} from '../../../state'
 
 const MyPosts = (props) => {
 
@@ -13,13 +14,12 @@ const MyPosts = (props) => {
 
     let addPost = () => {
         // let text = document.getElementById('new-post').value
-        props.dispatch({type: 'ADD-POST'})
+        props.dispatch(addPostActionCreator())
     }
 
     let onPostChange = () => {
-        let messageText = newPostElement.current.value;
-        let action = {type: 'UPDATE-NEW-POST-TEXT', newText: messageText};
-        props.dispatch(action)
+        let messageText = newPostElement.current.value
+        props.dispatch(updateNewPostTextActionCreator(messageText))
     }
 
     return <div>
