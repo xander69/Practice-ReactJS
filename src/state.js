@@ -1,9 +1,5 @@
 import * as util from './util'
 
-let rerenderEntireTree = () => {
-    console.log('State changed')
-}
-
 let postsData = [
     {
         message: 'Hi! Who are you?',
@@ -60,35 +56,42 @@ let messagesData = [
     {message: 'Bla-bla-bla'}
 ]
 
-let state = {
-    profilePage: {
-        posts: postsData,
-        newPostText: 'default message text'
+let store = {
+    _state: {
+        profilePage: {
+            posts: postsData,
+            newPostText: 'default message text'
+        },
+        dialogPage: {
+            dialogs: dialogsData,
+            messages: messagesData
+        }
     },
-    dialogPage: {
-        dialogs: dialogsData,
-        messages: messagesData
+    _callSubscriber() {
+        console.log('subscriber not defined')
+    },
+
+    getState() {
+      return this._state
+    },
+    subscribe(observer) {
+        this._callSubscriber = observer
+    },
+
+    addPost() {
+        this._state.profilePage.posts.push({
+            message: this._state.profilePage.newPostText,
+            dateTime: util.formatDate(new Date()),
+            likeCount: 0,
+            avatar: util.defaultAvatar
+        })
+        this._state.profilePage.newPostText = ''
+        this._callSubscriber(this._state)
+    },
+    updateNewPostText(newText) {
+        this._state.profilePage.newPostText = newText
+        this._callSubscriber(this._state)
     }
 }
 
-export const addPost = () => {
-    state.profilePage.posts.push({
-        message: state.profilePage.newPostText,
-        dateTime: util.formatDate(new Date()),
-        likeCount: 0,
-        avatar: util.defaultAvatar
-    })
-    state.profilePage.newPostText = ''
-    rerenderEntireTree(state)
-}
-
-export const updateNewPostText = (newText) => {
-    state.profilePage.newPostText = newText
-    rerenderEntireTree(state)
-}
-
-export const subscribe = (observer) => {
-    rerenderEntireTree = observer
-}
-
-export default state
+export default store
