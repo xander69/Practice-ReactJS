@@ -1,5 +1,8 @@
 import * as util from './util'
-import {rerenderEntireTree} from './render'
+
+let rerenderEntireTree = () => {
+    console.log('State changed')
+}
 
 let postsData = [
     {
@@ -59,7 +62,8 @@ let messagesData = [
 
 let state = {
     profilePage: {
-        posts: postsData
+        posts: postsData,
+        newPostText: 'default message text'
     },
     dialogPage: {
         dialogs: dialogsData,
@@ -67,14 +71,24 @@ let state = {
     }
 }
 
-export let addPost = (postMessage) => {
+export const addPost = () => {
     state.profilePage.posts.push({
-        message: postMessage,
+        message: state.profilePage.newPostText,
         dateTime: util.formatDate(new Date()),
         likeCount: 0,
         avatar: util.defaultAvatar
     })
+    state.profilePage.newPostText = ''
     rerenderEntireTree(state)
+}
+
+export const updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText
+    rerenderEntireTree(state)
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer
 }
 
 export default state
