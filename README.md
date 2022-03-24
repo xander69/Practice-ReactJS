@@ -13,7 +13,9 @@
 
 `npm start`
 
-`npm i react-router-dom -save` - плагин для роутинга
+`npm install react-router-dom --save` - плагин для роутинга
+
+`npm install redux --save` - установка redux
 
 ### References
 
