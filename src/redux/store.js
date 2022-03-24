@@ -1,9 +1,6 @@
-import * as util from './util'
-
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-const SEND_MESSAGE = 'SEND-MESSAGE'
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
+import profileReducer from './profile-reducer'
+import dialogReducer from './dialog-reducer'
+import sidebarReducer from './sidebar-reducer'
 
 let postsData = [
     {
@@ -71,7 +68,8 @@ let store = {
             dialogs: dialogsData,
             messages: messagesData,
             newMessageText: ''
-        }
+        },
+        sidebar: {}
     },
     _callSubscriber() {
         console.log('subscriber not defined')
@@ -84,68 +82,13 @@ let store = {
         this._callSubscriber = observer
     },
 
-    _addPost() {
-        this._state.profilePage.posts.push({
-            message: this._state.profilePage.newPostText,
-            dateTime: util.formatDate(new Date()),
-            likeCount: 0,
-            avatar: util.defaultAvatar
-        })
-        this._state.profilePage.newPostText = ''
-        this._callSubscriber(this._state)
-    },
-    _updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText
-        this._callSubscriber(this._state)
-    },
-    _sendMessage() {
-        const message = this._state.dialogPage.newMessageText
-        this._state.dialogPage.messages.push({message: message})
-        this._state.dialogPage.newMessageText = ''
-        this._callSubscriber(this._state)
-    },
-    _updateNewMessageText(newText) {
-        this._state.dialogPage.newMessageText = newText
-        this._callSubscriber(this._state)
-    },
-
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            this._addPost()
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._updateNewPostText(action.newText)
-        } else if (action.type === SEND_MESSAGE) {
-            this._sendMessage()
-        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-            this._updateNewMessageText(action.newText)
-        }
-    }
-}
-
-export const addPostActionCreator = () => {
-    return {
-        type: ADD_POST
-    }
-
-}
-export const updateNewPostTextActionCreator = (newText) => {
-    return {
-        type: UPDATE_NEW_POST_TEXT,
-        newText: newText
-    }
-}
-
-export const sendMessageActionCreator = () => {
-    return {
-        type: SEND_MESSAGE
-    }
-}
-
-export const updateNewMessageTextActionCreator = (newText) => {
-    return {
-        type: UPDATE_NEW_MESSAGE_TEXT,
-        newText: newText
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogPage = dialogReducer(this._state.dialogPage, action)
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action)
+        this._callSubscriber()
     }
 }
 
 export default store
+window.store = store

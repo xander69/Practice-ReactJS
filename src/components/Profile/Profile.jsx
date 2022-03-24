@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './Profile.module.css'
 import About from "./About/About";
 import MyPosts from "./MyPosts/MyPosts";
 

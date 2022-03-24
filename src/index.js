@@ -1,9 +1,9 @@
 import React from 'react'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
-import store from './state'
-import ReactDOM from "react-dom";
-import App from "./App";
+import store from './redux/store'
+import ReactDOM from 'react-dom'
+import App from './App'
 
 let rerenderEntireTree = (state) => {
     ReactDOM.render(

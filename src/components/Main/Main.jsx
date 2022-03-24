@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './Main.module.css'
 import poster from "../../poster.png";
 
 const Main = () => {
