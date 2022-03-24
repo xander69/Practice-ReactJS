@@ -6,6 +6,7 @@
 * ReactJS
 * ReactJS Routing
 * Redux
+* ReactRedux
 
 ### Getting started
 
@@ -16,6 +17,8 @@
 `npm install react-router-dom --save` - плагин для роутинга
 
 `npm install redux --save` - установка redux
+
+`npm install react-redux --save`
 
 ### References
 
