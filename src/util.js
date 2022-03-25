@@ -9,3 +9,7 @@ export function formatDate(date) {
     let seconds = date.getSeconds().toString().padStart(2, '0')
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
 }
+
+export function getLastId(array) {
+    return Math.max.apply(null, array.map(item => item.id))
+}

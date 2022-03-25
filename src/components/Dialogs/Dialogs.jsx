@@ -1,17 +1,18 @@
 import React from 'react';
 import s from './Dialogs.module.css'
-import DialogItem from "./DialogItem/DialogItem";
-import DialogMessage from "./DialogMessage/DialogMessage";
+import DialogItem from './DialogItem/DialogItem'
+import DialogMessage from './DialogMessage/DialogMessage'
 
 const Dialogs = (props) => {
 
     let newMessageElement = React.createRef()
 
     let dialogsElements = props.dialogPage.dialogs
-        .map(dialog => <DialogItem id={dialog.id} name={dialog.name}/>)
+        .map(dialog => <DialogItem key={dialog.id}
+                                   id={dialog.id} name={dialog.name}/>)
 
     let messagesElements = props.dialogPage.messages
-        .map(message => <DialogMessage message={message.message}/>)
+        .map(message => <DialogMessage key={message.id} message={message}/>)
 
     let onSendMessageClick = () => {
         props.sendMessage()

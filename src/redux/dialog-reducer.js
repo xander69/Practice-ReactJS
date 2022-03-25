@@ -1,3 +1,5 @@
+import * as util from '../util'
+
 const SEND_MESSAGE = 'SEND-MESSAGE'
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
 
@@ -11,11 +13,11 @@ const initialState = {
         {id: 6, name: 'Valery'}
     ],
     messages: [
-        {message: 'Hi'},
-        {message: 'How are you?'},
-        {message: 'I\'m fine'},
-        {message: 'Yo yo yo'},
-        {message: 'Bla-bla-bla'}
+        {id: 1, message: 'Hi'},
+        {id: 2, message: 'How are you?'},
+        {id: 3, message: 'I\'m fine'},
+        {id: 4, message: 'Yo yo yo'},
+        {id: 5, message: 'Bla-bla-bla'}
     ],
     newMessageText: ''
 }
@@ -27,7 +29,10 @@ const dialogReducer = (state = initialState, action) => {
                 ...state,
                 messages: [
                     ...state.messages,
-                    {message: state.newMessageText}
+                    {
+                        id: util.getLastId(state.messages) + 1,
+                        message: state.newMessageText
+                    }
                 ],
                 newMessageText: ''
             }
