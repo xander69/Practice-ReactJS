@@ -24,3 +24,4 @@ yarn-error.log*
 
 # WebStorm
 /.idea
+/data-server/db-dev.json
