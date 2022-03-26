@@ -9,6 +9,7 @@
 * ReactRedux
 * Rest API
 * Json-Server
+* Faker.js
 
 ### Getting started
 
@@ -25,6 +26,15 @@ npm install redux --save
 npm install react-redux --save
 ```
 
+Faker.js
+```
+mkdir data-faker
+npm init
+npm install @faker-js/faker --save-dev
+
+# create file and fill index.js
+
+node index.js
 ```
 
 Json-Server
@@ -65,3 +75,8 @@ json-server --watch db-dev.json --port 9000 --routes routes.json
    https://github.com/typicode/json-server
    https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d
    https://www.youtube.com/watch?v=x3NAo8zqdmo
+
+7. Faker.js
+
+   https://github.com/faker-js/faker
+   https://itnext.io/how-to-generate-mock-data-using-faker-js-and-json-server-1d17007a08e4
