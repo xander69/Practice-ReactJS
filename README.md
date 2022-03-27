@@ -10,6 +10,7 @@
 * Rest API
 * Json-Server
 * Faker.js
+* Axios
 
 ### Getting started
 
@@ -24,6 +25,8 @@ npm install react-router-dom --save
 npm install redux --save
 
 npm install react-redux --save
+
+npm install axios --save
 ```
 
 Faker.js
