@@ -1,12 +1,12 @@
 import {connect} from "react-redux";
 import UsersApiComponent from './UsersApiComponent'
 import {
-    followActionCreator,
-    setCurrentPageActionCreator,
-    setTotalUsersCountActionCreator,
-    setUsersActionCreator,
-    toggleIsFetchingActionCreator,
-    unfollowActionCreator
+    follow,
+    setCurrentPage,
+    setTotalUsersCount,
+    setUsers,
+    toggleIsFetching,
+    unfollow
 } from '../../redux/users-reducer'
 
 const mapStateToProps = (state) => {
@@ -19,15 +19,13 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => dispatch(followActionCreator(userId)),
-        unfollow: (userId) => dispatch(unfollowActionCreator(userId)),
-        setUsers: (users) => dispatch(setUsersActionCreator(users)),
-        setCurrentPage: (pageNumber) => dispatch(setCurrentPageActionCreator(pageNumber)),
-        setTotalUsersCount: (totalCount) => dispatch(setTotalUsersCountActionCreator(totalCount)),
-        toggleIsFetching: (isFetching) => dispatch(toggleIsFetchingActionCreator(isFetching))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersApiComponent)
+export default connect(
+    mapStateToProps,
+    {
+        follow,
+        unfollow,
+        setUsers,
+        setCurrentPage,
+        setTotalUsersCount,
+        toggleIsFetching
+    })(UsersApiComponent)
