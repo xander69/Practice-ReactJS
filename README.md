@@ -83,3 +83,7 @@ json-server --watch db-dev.json --port 9000 --routes routes.json
 
    https://github.com/faker-js/faker
    https://itnext.io/how-to-generate-mock-data-using-faker-js-and-json-server-1d17007a08e4
+
+8. Preloader generator
+    
+   https://loading.io/

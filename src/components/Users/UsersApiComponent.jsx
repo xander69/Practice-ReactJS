@@ -14,9 +14,11 @@ class UsersApiComponent extends React.Component {
     }
 
     loadUsersPage(pageNumber) {
+        this.props.toggleIsFetching(true)
         axios
             .get(`http://localhost:9000/api/1.0/users?_page=${pageNumber}&_limit=${this.props.pageSize}`)
             .then(response => {
+                this.props.toggleIsFetching(false)
                 this.props.setTotalUsersCount(parseInt(response.headers['x-total-count']))
                 this.props.setUsers(response.data)
             })
@@ -32,6 +34,7 @@ class UsersApiComponent extends React.Component {
                       totalUsersCount={this.props.totalUsersCount}
                       currentPage={this.props.currentPage}
                       pageSize={this.props.pageSize}
+                      isFetching={this.props.isFetching}
                       follow={this.props.follow}
                       unfollow={this.props.unfollow}
                       onPageChange={this.onPageChange}/>
