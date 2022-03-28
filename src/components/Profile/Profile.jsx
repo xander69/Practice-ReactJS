@@ -2,10 +2,10 @@ import React from 'react';
 import About from './About/About'
 import MyPostsContainer from './MyPosts/MyPostsContainer'
 
-const Profile = () => {
+const Profile = (props) => {
     return <div>
-        <h1>My Profile</h1>
-        <About/>
+        <h1>{props.profile.fullName}</h1>
+        <About profile={props.profile}/>
         <MyPostsContainer/>
     </div>
 }

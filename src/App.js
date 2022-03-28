@@ -4,13 +4,13 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
-import Profile from "./components/Profile/Profile";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 const App = () => {
     return <BrowserRouter>
@@ -20,7 +20,10 @@ const App = () => {
             <div className='app-wrapper-content'>
                 <Routes>
                     <Route path="/" element={<Main/>}/>
-                    <Route path="/profile" element={<Profile/>}/>
+                    <Route path="/profile">
+                        <Route index element={<ProfileContainer/>}/>
+                        <Route path="/profile/:userId" element={<ProfileContainer/>}/>
+                    </Route>
                     <Route path="/news" element={<News/>}/>
                     <Route path="/dialogs/*" element={<DialogsContainer/>}/>
                     <Route path="/music" element={<Music/>}/>

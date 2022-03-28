@@ -1,6 +1,7 @@
 import React from "react";
 import s from './UserList.module.css'
 import Preloader from '../../common/Preloader/Preloader'
+import {NavLink} from 'react-router-dom'
 
 const UserList = (props) => {
     return <>
@@ -12,7 +13,9 @@ const UserList = (props) => {
                         props.users.map(user =>
                             <div key={user.id} className={s.userCard}>
                                 <div className={s.userCardAvatar}>
-                                    <img src={user.avatar} alt="avatar"/>
+                                    <NavLink to={`/profile/${user.id}`}>
+                                        <img src={user.avatar} alt="avatar"/>
+                                    </NavLink>
                                 </div>
                                 <div className={s.userCardAction}>
                                     {
