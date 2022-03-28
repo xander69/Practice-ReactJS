@@ -10,20 +10,39 @@ class Users extends React.Component {
     }
 
     componentDidMount() {
-        this.initialiseUsers()
+        this.loadUsersPage(this.props.currentPage)
     }
 
-    initialiseUsers() {
-        if (this.props.users.length === 0) {
-            axios
-                .get('http://localhost:9000/api/1.0/users?_page=1')
-                .then(response => this.props.setUsers(response.data))
-        }
+    loadUsersPage(pageNumber) {
+        axios
+            .get(`http://localhost:9000/api/1.0/users?_page=${pageNumber}&_limit=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setTotalUsersCount(response.headers['x-total-count'])
+                this.props.setUsers(response.data)
+            })
+    }
+
+    onPageChange = (pageNumber) => {
+        this.props.setCurrentPage(pageNumber)
+        this.loadUsersPage(pageNumber)
     }
 
     render() {
+        const pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
+        const pages = []
+        for (let i = 1; i <= pagesCount; i++) {
+            pages.push(i)
+        }
+
         return <div>
             <h1>Users</h1>
+            <div className={s.pagination}>
+                {pages.map(page => {
+                    return <span key={page}
+                                 className={this.props.currentPage === page ? s.selected : undefined}
+                                 onClick={() => this.onPageChange(page)}>{page}</span>
+                })}
+            </div>
             {
                 this.props.users.map(user => <div key={user.id} className={s.userCard}>
                     <div className={s.userCardAvatar}>
