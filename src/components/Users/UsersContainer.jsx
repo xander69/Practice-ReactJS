@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import Users from "./Users";
+import UsersApiComponent from './UsersApiComponent'
 import {
     followActionCreator,
     setCurrentPageActionCreator,
@@ -28,4 +28,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Users)
+export default connect(mapStateToProps, mapDispatchToProps)(UsersApiComponent)
