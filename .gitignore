@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /data-faker/node_modules
+/data-server/node_modules
 /.pnp
 .pnp.js
 

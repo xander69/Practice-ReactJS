@@ -1,4 +1,12 @@
 {
+  "auth": {
+    "resultCode": 0,
+    "data": {
+      "userId": 12,
+      "email": "alexander@mail.com",
+      "login": "Alexander"
+    }
+  },
   "users": [
     {
       "id": 0,

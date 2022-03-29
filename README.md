@@ -42,13 +42,14 @@ node index.js
 
 Json-Server
 ```
-npm install -g json-server
-
+mkdir data-server
 cd data-server
 
-copy db.json db-dev.json
+npm init
 
-json-server --watch db-dev.json --port 9000 --routes routes.json
+npm install json-server --save-dev
+
+node index.js
 ```
 
 ### References
