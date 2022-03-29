@@ -1,9 +1,10 @@
 import React from 'react';
-import poster from "../../poster.png";
+import s from './Main.module.css'
 
 const Main = () => {
     return <div>
-        <img src={poster} alt="poster"/>
+        <div className={s.mainPoster}>
+        </div>
         <div>
             <h1>Bread is...</h1>
             <div>
