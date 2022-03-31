@@ -1,13 +1,15 @@
 import {connect} from "react-redux";
 import UsersApiComponent from './UsersApiComponent'
 import {
-    follow,
     setCurrentPage,
     setTotalUsersCount,
     setUsers,
-    toggleIsFetching,
-    unfollow
+    toggleIsFetching
 } from '../../redux/users-reducer'
+import {
+    follow,
+    unfollow
+} from '../../redux/auth-reducer'
 
 const mapStateToProps = (state) => {
     return {
@@ -15,7 +17,9 @@ const mapStateToProps = (state) => {
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching
+        isFetching: state.usersPage.isFetching,
+        isAuth: state.auth.isAuth,
+        currentUser: state.auth.data
     }
 }
 

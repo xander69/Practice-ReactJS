@@ -37,7 +37,9 @@ class UsersApiComponent extends React.Component {
                       isFetching={this.props.isFetching}
                       follow={this.props.follow}
                       unfollow={this.props.unfollow}
-                      onPageChange={this.onPageChange}/>
+                      onPageChange={this.onPageChange}
+                      isAuth={this.props.isAuth}
+                      currentUser={this.props.currentUser}/>
     }
 }
 

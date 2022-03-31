@@ -22,7 +22,9 @@ const Users = (props) => {
         <UserList users={props.users}
                   isFetching={props.isFetching}
                   follow={props.follow}
-                  unfollow={props.unfollow}/>
+                  unfollow={props.unfollow}
+                  isAuth={props.isAuth}
+                  currentUser={props.currentUser}/>
     </div>
 }
 

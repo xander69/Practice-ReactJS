@@ -2,8 +2,22 @@ import React from "react";
 import s from './UserList.module.css'
 import Preloader from '../../common/Preloader/Preloader'
 import {NavLink} from 'react-router-dom'
+import axios from 'axios'
 
 const UserList = (props) => {
+
+    const onFollow = (userId) => {
+        axios.post(`http://localhost:9000/api/1.0/follow/${userId}`, {},
+            {headers: {'With-Credential': true}})
+            .then(props.follow(userId))
+    }
+
+    const onUnfollow = (userId) => {
+        axios.post(`http://localhost:9000/api/1.0/unfollow/${userId}`, {},
+            {headers: {'With-Credential': true}})
+            .then(props.unfollow(userId))
+    }
+
     return <>
         {
             props.isFetching
@@ -19,9 +33,11 @@ const UserList = (props) => {
                                 </div>
                                 <div className={s.userCardAction}>
                                     {
-                                        user.followed
-                                            ? <button onClick={() => props.unfollow(user.id)}>Unfollow</button>
-                                            : <button onClick={() => props.follow(user.id)}>Follow</button>
+                                        props.isAuth ?
+                                            props.currentUser.followed.includes(user.id)
+                                                ? <button onClick={() => onUnfollow(user.id)}>Unfollow</button>
+                                                : <button onClick={() => onFollow(user.id)}>Follow</button>
+                                            : <span/>
                                     }
                                 </div>
                                 <div className={s.userCardHeader}>

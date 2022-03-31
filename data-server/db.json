@@ -1,31 +1,12 @@
 {
-  "auth": {
-    "resultCode": 0,
-    "data": {
-      "userId": 12,
-      "email": "alexander@mail.com",
-      "login": "Alexander"
-    }
-  },
   "users": [
-    {
-      "id": 0,
-      "gender": "Male",
-      "fullName": "Armando VonRueden",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/330.jpg",
-      "title": "Forward Assurance Analyst",
-      "followed": true,
-      "country": "Guinea-Bissau",
-      "city": "Rowlett",
-      "email": "Armando_VonRueden65@yahoo.com"
-    },
     {
       "id": 1,
       "gender": "Male",
       "fullName": "Doug Stracke",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/968.jpg",
       "title": "Chief Research Technician",
-      "followed": true,
+      "followed": [1, 2, 3],
       "country": "Hungary",
       "city": "Cedar Park",
       "email": "Doug74@hotmail.com"
@@ -36,7 +17,7 @@
       "fullName": "Dawn Terry",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/912.jpg",
       "title": "Product Applications Analyst",
-      "followed": true,
+      "followed": [4, 5, 6],
       "country": "Timor-Leste",
       "city": "Commerce City",
       "email": "Dawn67@gmail.com"
@@ -47,7 +28,7 @@
       "fullName": "Jody O'Conner",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/896.jpg",
       "title": "Senior Factors Administrator",
-      "followed": true,
+      "followed": [7, 8, 9],
       "country": "Togo",
       "city": "Albuquerque",
       "email": "Jody.OConner@gmail.com"
@@ -58,7 +39,7 @@
       "fullName": "Gloria Upton",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/387.jpg",
       "title": "Regional Directives Associate",
-      "followed": false,
+      "followed": [10, 11, 12],
       "country": "Uganda",
       "city": "Edina",
       "email": "Gloria.Upton@hotmail.com"
@@ -69,7 +50,7 @@
       "fullName": "Calvin Barton",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/89.jpg",
       "title": "Central Metrics Facilitator",
-      "followed": true,
+      "followed": [13, 14, 15],
       "country": "Micronesia",
       "city": "Belleville",
       "email": "Calvin_Barton@gmail.com"
@@ -80,7 +61,7 @@
       "fullName": "Dominic McKenzie",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/606.jpg",
       "title": "Regional Integration Representative",
-      "followed": true,
+      "followed": [16, 17, 18],
       "country": "Netherlands Antilles",
       "city": "Lincoln",
       "email": "Dominic61@hotmail.com"
@@ -91,7 +72,7 @@
       "fullName": "Jeff Marvin",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1103.jpg",
       "title": "Legacy Configuration Agent",
-      "followed": true,
+      "followed": [19, 20, 21],
       "country": "British Indian Ocean Territory (Chagos Archipelago)",
       "city": "Rio Rancho",
       "email": "Jeff94@yahoo.com"
@@ -102,7 +83,7 @@
       "fullName": "Faith Anderson",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/384.jpg",
       "title": "Global Integration Architect",
-      "followed": true,
+      "followed": [22, 23, 24],
       "country": "Saint Lucia",
       "city": "Concord",
       "email": "Faith7@hotmail.com"
@@ -113,7 +94,7 @@
       "fullName": "Eddie Wolff",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1201.jpg",
       "title": "Central Factors Analyst",
-      "followed": false,
+      "followed": [],
       "country": "Sierra Leone",
       "city": "Springdale",
       "email": "Eddie.Wolff@gmail.com"
@@ -124,7 +105,7 @@
       "fullName": "Lucia Abernathy",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1248.jpg",
       "title": "Product Assurance Manager",
-      "followed": true,
+      "followed": [],
       "country": "Senegal",
       "city": "State College",
       "email": "Lucia_Abernathy@yahoo.com"
@@ -135,7 +116,7 @@
       "fullName": "Francis Erdman",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/454.jpg",
       "title": "Principal Operations Strategist",
-      "followed": true,
+      "followed": [],
       "country": "Christmas Island",
       "city": "Blacksburg",
       "email": "Francis.Erdman68@gmail.com"
@@ -146,7 +127,7 @@
       "fullName": "Douglas Wyman",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/250.jpg",
       "title": "Future Infrastructure Executive",
-      "followed": true,
+      "followed": [1, 4, 7, 8, 10, 20, 13],
       "country": "Saudi Arabia",
       "city": "Boston",
       "email": "Douglas_Wyman@yahoo.com"
@@ -157,7 +138,7 @@
       "fullName": "Joey Rohan",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1247.jpg",
       "title": "Human Communications Planner",
-      "followed": false,
+      "followed": [],
       "country": "Vanuatu",
       "city": "Inglewood",
       "email": "Joey.Rohan30@yahoo.com"
@@ -168,7 +149,7 @@
       "fullName": "Shelley Cole",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/650.jpg",
       "title": "Internal Identity Representative",
-      "followed": true,
+      "followed": [],
       "country": "Uzbekistan",
       "city": "Oxnard",
       "email": "Shelley11@gmail.com"
@@ -179,7 +160,7 @@
       "fullName": "Constance Nikolaus",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/2.jpg",
       "title": "Investor Usability Supervisor",
-      "followed": true,
+      "followed": [],
       "country": "Martinique",
       "city": "Roswell",
       "email": "Constance_Nikolaus28@yahoo.com"
@@ -190,7 +171,7 @@
       "fullName": "Fernando White",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1029.jpg",
       "title": "Dynamic Assurance Designer",
-      "followed": true,
+      "followed": [],
       "country": "Benin",
       "city": "Victorville",
       "email": "Fernando64@yahoo.com"
@@ -201,7 +182,7 @@
       "fullName": "Jennie MacGyver",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/879.jpg",
       "title": "District Branding Executive",
-      "followed": true,
+      "followed": [],
       "country": "Armenia",
       "city": "Lenexa",
       "email": "Jennie32@hotmail.com"
@@ -212,7 +193,7 @@
       "fullName": "Rudy Adams",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/104.jpg",
       "title": "Direct Accounts Director",
-      "followed": true,
+      "followed": [],
       "country": "Libyan Arab Jamahiriya",
       "city": "Columbia",
       "email": "Rudy35@hotmail.com"
@@ -223,7 +204,7 @@
       "fullName": "Geneva Murazik",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/938.jpg",
       "title": "Dynamic Infrastructure Manager",
-      "followed": true,
+      "followed": [],
       "country": "Kuwait",
       "city": "Janesville",
       "email": "Geneva_Murazik11@gmail.com"
@@ -234,7 +215,7 @@
       "fullName": "Meredith Gottlieb",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1243.jpg",
       "title": "National Branding Executive",
-      "followed": true,
+      "followed": [],
       "country": "Samoa",
       "city": "Duluth",
       "email": "Meredith84@yahoo.com"
@@ -245,7 +226,7 @@
       "fullName": "Loretta Fritsch",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/806.jpg",
       "title": "Dynamic Assurance Orchestrator",
-      "followed": true,
+      "followed": [],
       "country": "Netherlands Antilles",
       "city": "Montebello",
       "email": "Loretta_Fritsch@gmail.com"
@@ -256,7 +237,7 @@
       "fullName": "Maureen Gorczany",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/734.jpg",
       "title": "Internal Functionality Analyst",
-      "followed": true,
+      "followed": [],
       "country": "Ukraine",
       "city": "Edinburg",
       "email": "Maureen.Gorczany@gmail.com"
@@ -267,7 +248,7 @@
       "fullName": "Levi Trantow",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/976.jpg",
       "title": "Dynamic Interactions Manager",
-      "followed": false,
+      "followed": [],
       "country": "Dominica",
       "city": "Fountain Valley",
       "email": "Levi.Trantow@gmail.com"
@@ -278,7 +259,7 @@
       "fullName": "Steve Carroll",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/852.jpg",
       "title": "Human Assurance Agent",
-      "followed": false,
+      "followed": [],
       "country": "Madagascar",
       "city": "Smyrna",
       "email": "Steve14@hotmail.com"
@@ -289,7 +270,7 @@
       "fullName": "Mona Ziemann",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1249.jpg",
       "title": "Human Accountability Consultant",
-      "followed": false,
+      "followed": [],
       "country": "Cocos (Keeling) Islands",
       "city": "East Honolulu",
       "email": "Mona_Ziemann24@hotmail.com"
@@ -300,7 +281,7 @@
       "fullName": "Chris Kirlin",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/664.jpg",
       "title": "Future Assurance Designer",
-      "followed": true,
+      "followed": [],
       "country": "Italy",
       "city": "Dearborn",
       "email": "Chris.Kirlin81@yahoo.com"
@@ -311,7 +292,7 @@
       "fullName": "Nina Bartell",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/349.jpg",
       "title": "District Paradigm Facilitator",
-      "followed": true,
+      "followed": [],
       "country": "Afghanistan",
       "city": "Altoona",
       "email": "Nina.Bartell@hotmail.com"
@@ -322,7 +303,7 @@
       "fullName": "Zachary Hodkiewicz",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/649.jpg",
       "title": "Chief Security Specialist",
-      "followed": false,
+      "followed": [],
       "country": "Christmas Island",
       "city": "Harrisonburg",
       "email": "Zachary15@yahoo.com"
@@ -333,7 +314,7 @@
       "fullName": "Herman Douglas",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1184.jpg",
       "title": "Senior Accountability Facilitator",
-      "followed": false,
+      "followed": [],
       "country": "Chad",
       "city": "Greeley",
       "email": "Herman87@hotmail.com"
@@ -344,7 +325,7 @@
       "fullName": "Marion McClure",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1026.jpg",
       "title": "Corporate Usability Facilitator",
-      "followed": true,
+      "followed": [],
       "country": "Belgium",
       "city": "Compton",
       "email": "Marion_McClure@yahoo.com"
@@ -355,7 +336,7 @@
       "fullName": "Kathy McClure",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/887.jpg",
       "title": "Direct Research Agent",
-      "followed": true,
+      "followed": [],
       "country": "Central African Republic",
       "city": "Ogden",
       "email": "Kathy.McClure95@gmail.com"
@@ -366,7 +347,7 @@
       "fullName": "Arthur Schuppe",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/963.jpg",
       "title": "Principal Program Specialist",
-      "followed": true,
+      "followed": [],
       "country": "Egypt",
       "city": "Bowling Green",
       "email": "Arthur34@yahoo.com"
@@ -377,7 +358,7 @@
       "fullName": "Daniel Tremblay",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1161.jpg",
       "title": "Principal Creative Architect",
-      "followed": false,
+      "followed": [],
       "country": "Benin",
       "city": "Paterson",
       "email": "Daniel73@yahoo.com"
@@ -388,7 +369,7 @@
       "fullName": "Gregory Renner",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/822.jpg",
       "title": "Human Web Assistant",
-      "followed": false,
+      "followed": [],
       "country": "Slovenia",
       "city": "Anchorage",
       "email": "Gregory.Renner91@gmail.com"
@@ -399,7 +380,7 @@
       "fullName": "Veronica Pouros",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/887.jpg",
       "title": "Investor Communications Developer",
-      "followed": false,
+      "followed": [],
       "country": "Netherlands",
       "city": "Berkeley",
       "email": "Veronica.Pouros@hotmail.com"
@@ -410,7 +391,7 @@
       "fullName": "Donald Kuphal",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/470.jpg",
       "title": "Dynamic Usability Executive",
-      "followed": true,
+      "followed": [],
       "country": "Andorra",
       "city": "Santa Barbara",
       "email": "Donald87@yahoo.com"
@@ -421,7 +402,7 @@
       "fullName": "Edward Emard",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1035.jpg",
       "title": "International Communications Producer",
-      "followed": false,
+      "followed": [],
       "country": "Micronesia",
       "city": "Jersey City",
       "email": "Edward67@hotmail.com"
@@ -432,7 +413,7 @@
       "fullName": "Edith Bogisich",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1118.jpg",
       "title": "Legacy Accountability Coordinator",
-      "followed": true,
+      "followed": [],
       "country": "China",
       "city": "Bethesda",
       "email": "Edith_Bogisich@hotmail.com"
@@ -443,7 +424,7 @@
       "fullName": "Kerry Nolan",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1155.jpg",
       "title": "International Factors Coordinator",
-      "followed": false,
+      "followed": [],
       "country": "Sri Lanka",
       "city": "Ocala",
       "email": "Kerry52@gmail.com"
@@ -454,7 +435,7 @@
       "fullName": "Simon O'Conner",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/488.jpg",
       "title": "National Functionality Planner",
-      "followed": true,
+      "followed": [],
       "country": "Lao People's Democratic Republic",
       "city": "Springdale",
       "email": "Simon.OConner@yahoo.com"
@@ -465,7 +446,7 @@
       "fullName": "Angelica Turner",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/667.jpg",
       "title": "Principal Creative Supervisor",
-      "followed": false,
+      "followed": [],
       "country": "New Caledonia",
       "city": "Somerville",
       "email": "Angelica.Turner2@yahoo.com"
@@ -476,7 +457,7 @@
       "fullName": "Barry Williamson",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/969.jpg",
       "title": "Central Functionality Coordinator",
-      "followed": true,
+      "followed": [],
       "country": "Eritrea",
       "city": "East Los Angeles",
       "email": "Barry.Williamson7@hotmail.com"
@@ -487,7 +468,7 @@
       "fullName": "Diana Kuhic",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/995.jpg",
       "title": "District Interactions Facilitator",
-      "followed": true,
+      "followed": [],
       "country": "Canada",
       "city": "Lakeland",
       "email": "Diana.Kuhic@gmail.com"
@@ -498,7 +479,7 @@
       "fullName": "Daisy Fay",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1087.jpg",
       "title": "Forward Implementation Analyst",
-      "followed": false,
+      "followed": [],
       "country": "Tonga",
       "city": "Tinley Park",
       "email": "Daisy.Fay@yahoo.com"
@@ -509,7 +490,7 @@
       "fullName": "Madeline Dibbert",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/26.jpg",
       "title": "Customer Mobility Orchestrator",
-      "followed": true,
+      "followed": [],
       "country": "Lao People's Democratic Republic",
       "city": "Wheaton",
       "email": "Madeline.Dibbert@yahoo.com"
@@ -520,7 +501,7 @@
       "fullName": "Phyllis Trantow",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1190.jpg",
       "title": "Dynamic Communications Coordinator",
-      "followed": true,
+      "followed": [],
       "country": "Cambodia",
       "city": "Miami Beach",
       "email": "Phyllis_Trantow17@hotmail.com"
@@ -531,7 +512,7 @@
       "fullName": "Francis Wolf",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/7.jpg",
       "title": "Investor Communications Designer",
-      "followed": false,
+      "followed": [],
       "country": "Maldives",
       "city": "South Jordan",
       "email": "Francis49@gmail.com"
@@ -542,7 +523,7 @@
       "fullName": "Sheryl Jacobs",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/414.jpg",
       "title": "Human Solutions Director",
-      "followed": false,
+      "followed": [],
       "country": "Slovenia",
       "city": "Rogers",
       "email": "Sheryl.Jacobs@hotmail.com"
@@ -553,10 +534,21 @@
       "fullName": "Moses Gerhold",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/833.jpg",
       "title": "Direct Integration Director",
-      "followed": true,
+      "followed": [],
       "country": "Poland",
       "city": "Perris",
       "email": "Moses93@hotmail.com"
+    },
+    {
+      "id": 50,
+      "gender": "Male",
+      "fullName": "Armando VonRueden",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/330.jpg",
+      "title": "Forward Assurance Analyst",
+      "followed": [],
+      "country": "Guinea-Bissau",
+      "city": "Rowlett",
+      "email": "Armando_VonRueden65@yahoo.com"
     }
   ]
 }

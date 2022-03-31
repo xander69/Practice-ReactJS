@@ -14,6 +14,21 @@ const isAuthorized = (req) => {
     return req.headers['with-credential'] === 'true'
 }
 
+const setFollowed = (userId, followed) => {
+    const index = currentUser.followed.indexOf(userId)
+    if (followed) {
+        if (index === -1) {
+            currentUser.followed.push(userId)
+            db.write()
+        }
+    } else {
+        if (index > -1) {
+            currentUser.followed.splice(index, 1)
+            db.write()
+        }
+    }
+}
+
 server.use(middlewares)
 server.use((req, res, next) => {
     if (isAuthorized(req)) {
@@ -26,6 +41,16 @@ server.use((req, res, next) => {
 
 server.get('/api/1.0/auth/me', (req, res) => {
     res.status(200).jsonp(currentUser)
+})
+server.post('/api/1.0/follow/:userId', (req, res) => {
+    const userId = parseInt(req.params.userId)
+    const result = setFollowed(userId, true)
+    res.status(200).json({success: result})
+})
+server.post('/api/1.0/unfollow/:userId', (req, res) => {
+    const userId = parseInt(req.params.userId)
+    const result = setFollowed(userId, false)
+    res.status(200).json({success: result})
 })
 
 server.use(jsonServer.rewriter({
