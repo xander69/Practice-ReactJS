@@ -1,22 +1,42 @@
 .header {
     grid-area: h;
     background-color: saddlebrown;
-    display: block;
-    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 8fr 3fr;
 }
 
-.header img {
-    padding-right: 20px;
+.headerLogo {
+    grid-column: 1;
+    text-align: center;
+    align-self: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.headerLogo img {
     width: 60px;
     height: 60px;
-    float: right;
 }
 
-.header div {
+.headerTitle {
+    grid-column: 2;
     color: burlywood;
     font-size: 24pt;
     font-weight: bold;
     font-style: italic;
-    padding-left: 20px;
-    padding-top: 5px;
+    text-align: left;
+    align-self: center;
+}
+
+.headerLogin {
+    grid-column: 3;
+    text-align: right;
+    align-self: center;
+    padding-right: 20px;
+    color: white;
+}
+
+.headerLogin a {
+    color: white;
+    text-decoration: none;
 }

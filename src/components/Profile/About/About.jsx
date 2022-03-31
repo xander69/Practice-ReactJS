@@ -8,6 +8,7 @@ const About = (props) => {
     }
 
     return <div>
+        <h1>{props.profile.fullName}</h1>
         <div>
             <img className={s.avatar} src={props.profile.avatar} alt="avatar"/>
         </div>
