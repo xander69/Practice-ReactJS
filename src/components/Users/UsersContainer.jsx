@@ -10,6 +10,7 @@ import {
     follow,
     unfollow
 } from '../../redux/auth-reducer'
+import {withParams} from '../../util/util'
 
 const mapStateToProps = (state) => {
     return {
@@ -32,4 +33,4 @@ export default connect(
         setCurrentPage,
         setTotalUsersCount,
         toggleIsFetching
-    })(UsersApiComponent)
+    })(withParams(UsersApiComponent))

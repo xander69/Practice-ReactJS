@@ -4,13 +4,12 @@ import Users from './Users'
 
 class UsersApiComponent extends React.Component {
 
-    constructor(props) {
-        super(props)
-        console.log('construct Users component')
-    }
-
     componentDidMount() {
-        this.loadUsersPage(this.props.currentPage)
+        if (this.props.params.page) {
+            this.onPageChange(parseInt(this.props.params.page))
+        } else {
+            this.loadUsersPage(this.props.currentPage)
+        }
     }
 
     loadUsersPage(pageNumber) {
@@ -30,16 +29,8 @@ class UsersApiComponent extends React.Component {
     }
 
     render() {
-        return <Users users={this.props.users}
-                      totalUsersCount={this.props.totalUsersCount}
-                      currentPage={this.props.currentPage}
-                      pageSize={this.props.pageSize}
-                      isFetching={this.props.isFetching}
-                      follow={this.props.follow}
-                      unfollow={this.props.unfollow}
-                      onPageChange={this.onPageChange}
-                      isAuth={this.props.isAuth}
-                      currentUser={this.props.currentUser}/>
+        return <Users {...this.props}
+                      onPageChange={this.onPageChange}/>
     }
 }
 

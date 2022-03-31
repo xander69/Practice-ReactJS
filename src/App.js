@@ -28,7 +28,10 @@ const App = () => {
                     <Route path="/dialogs/*" element={<DialogsContainer/>}/>
                     <Route path="/music" element={<Music/>}/>
                     <Route path="/settings" element={<Settings/>}/>
-                    <Route path="/users" element={<UsersContainer/>}/>
+                    <Route path="/users">
+                        <Route index element={<UsersContainer/>}/>
+                        <Route path="/users/:page"  element={<UsersContainer/>}/>
+                    </Route>
                 </Routes>
             </div>
             <Footer/>
