@@ -2,20 +2,16 @@ import React from "react";
 import s from './UserList.module.css'
 import Preloader from '../../common/Preloader/Preloader'
 import {NavLink} from 'react-router-dom'
-import axios from 'axios'
+import {usersApi} from '../../../api/api'
 
 const UserList = (props) => {
 
     const onFollow = (userId) => {
-        axios.post(`http://localhost:9000/api/1.0/follow/${userId}`, {},
-            {headers: {'With-Credential': true}})
-            .then(props.follow(userId))
+        usersApi.follow(userId).then(props.follow(userId))
     }
 
     const onUnfollow = (userId) => {
-        axios.post(`http://localhost:9000/api/1.0/unfollow/${userId}`, {},
-            {headers: {'With-Credential': true}})
-            .then(props.unfollow(userId))
+        usersApi.unfollow(userId).then(props.unfollow(userId))
     }
 
     return <>

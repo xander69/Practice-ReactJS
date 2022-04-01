@@ -1,6 +1,6 @@
 import React from 'react'
-import axios from 'axios'
 import Users from './Users'
+import {usersApi} from '../../api/api'
 
 class UsersApiComponent extends React.Component {
 
@@ -14,12 +14,11 @@ class UsersApiComponent extends React.Component {
 
     loadUsersPage(pageNumber) {
         this.props.toggleIsFetching(true)
-        axios
-            .get(`http://localhost:9000/api/1.0/users?_page=${pageNumber}&_limit=${this.props.pageSize}`)
-            .then(response => {
+        usersApi.getUsers(pageNumber, this.props.pageSize)
+            .then(data => {
                 this.props.toggleIsFetching(false)
-                this.props.setTotalUsersCount(parseInt(response.headers['x-total-count']))
-                this.props.setUsers(response.data)
+                this.props.setTotalUsersCount(data.totalUsersCount)
+                this.props.setUsers(data.users)
             })
     }
 

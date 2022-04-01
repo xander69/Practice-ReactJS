@@ -1,9 +1,9 @@
 import React from "react";
-import axios from 'axios'
 import {connect} from 'react-redux'
 import Profile from './Profile'
 import {setUserProfile} from '../../redux/profile-reducer'
 import {withParams} from '../../util/util'
+import {usersApi} from '../../api/api'
 
 class ProfileContainer extends React.Component {
 
@@ -17,11 +17,7 @@ class ProfileContainer extends React.Component {
             //TODO: load current user from auth
             userId = 12
         }
-        axios
-            .get(`http://localhost:9000/api/1.0/users/${userId}`)
-            .then(response => {
-                this.props.setUserProfile(response.data)
-            })
+        usersApi.getUser(userId).then(data => this.props.setUserProfile(data))
     }
 
     render() {
