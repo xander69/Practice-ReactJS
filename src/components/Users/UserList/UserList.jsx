@@ -7,11 +7,19 @@ import {usersApi} from '../../../api/api'
 const UserList = (props) => {
 
     const onFollow = (userId) => {
-        usersApi.follow(userId).then(props.follow(userId))
+        props.toggleFollowingProgress(true, userId)
+        usersApi.follow(userId).then(() => {
+            props.follow(userId)
+            props.toggleFollowingProgress(false, userId)
+        })
     }
 
     const onUnfollow = (userId) => {
-        usersApi.unfollow(userId).then(props.unfollow(userId))
+        props.toggleFollowingProgress(true, userId)
+        usersApi.unfollow(userId).then(() => {
+            props.unfollow(userId)
+            props.toggleFollowingProgress(false, userId)
+        })
     }
 
     return <>
@@ -31,8 +39,10 @@ const UserList = (props) => {
                                     {
                                         props.isAuth ?
                                             props.currentUser.followed.includes(user.id)
-                                                ? <button onClick={() => onUnfollow(user.id)}>Unfollow</button>
-                                                : <button onClick={() => onFollow(user.id)}>Follow</button>
+                                                ? <button disabled={props.followingInProgress.includes(user.id)}
+                                                          onClick={() => onUnfollow(user.id)}>Unfollow</button>
+                                                : <button disabled={props.followingInProgress.includes(user.id)}
+                                                          onClick={() => onFollow(user.id)}>Follow</button>
                                             : <span/>
                                     }
                                 </div>

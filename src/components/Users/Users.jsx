@@ -16,8 +16,8 @@ const Users = (props) => {
         <div className={s.pagination}>
             {pages.map(page => {
                 return <NavLink to={`/users/${page}`} key={page}
-                             className={`${s.pageLink} ${props.currentPage === page ? s.selected : undefined}`}
-                             onClick={() => props.onPageChange(page)}>{page}</NavLink>
+                                className={`${s.pageLink} ${props.currentPage === page ? s.selected : undefined}`}
+                                onClick={() => props.onPageChange(page)}>{page}</NavLink>
             })}
         </div>
         <UserList users={props.users}
@@ -25,7 +25,9 @@ const Users = (props) => {
                   follow={props.follow}
                   unfollow={props.unfollow}
                   isAuth={props.isAuth}
-                  currentUser={props.currentUser}/>
+                  currentUser={props.currentUser}
+                  followingInProgress={props.followingInProgress}
+                  toggleFollowingProgress={props.toggleFollowingProgress}/>
     </div>
 }
 

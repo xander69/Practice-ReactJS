@@ -1,9 +1,11 @@
 const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA'
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
+const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS'
 
 let initialState = {
     isAuth: false,
+    followingInProgress: [],
     data: {
         id: null,
         gender: null,
@@ -21,6 +23,7 @@ const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_AUTH_USER_DATA: {
             return {
+                ...state,
                 isAuth: true,
                 data: action.data
             }
@@ -50,6 +53,14 @@ const authReducer = (state = initialState, action) => {
                 }
             }
         }
+        case TOGGLE_IS_FOLLOWING_PROGRESS: {
+            return {
+                ...state,
+                followingInProgress: action.isFetching
+                    ? [...state.followingInProgress, action.userId]
+                    : state.followingInProgress.filter(id => id !== action.userId)
+            }
+        }
         default:
             return state
     }
@@ -58,5 +69,6 @@ const authReducer = (state = initialState, action) => {
 export const setAuthUserData = (data) => ({type: SET_AUTH_USER_DATA, data})
 export const follow = (userId) => ({type: FOLLOW, userId})
 export const unfollow = (userId) => ({type: UNFOLLOW, userId})
+export const toggleFollowingProgress = (isFetching, userId) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId})
 export default authReducer
 

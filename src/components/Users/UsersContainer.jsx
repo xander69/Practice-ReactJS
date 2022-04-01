@@ -8,6 +8,7 @@ import {
 } from '../../redux/users-reducer'
 import {
     follow,
+    toggleFollowingProgress,
     unfollow
 } from '../../redux/auth-reducer'
 import {withParams} from '../../util/util'
@@ -20,7 +21,8 @@ const mapStateToProps = (state) => {
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
         isAuth: state.auth.isAuth,
-        currentUser: state.auth.data
+        currentUser: state.auth.data,
+        followingInProgress: state.auth.followingInProgress
     }
 }
 
@@ -32,5 +34,6 @@ export default connect(
         setUsers,
         setCurrentPage,
         setTotalUsersCount,
-        toggleIsFetching
+        toggleIsFetching,
+        toggleFollowingProgress
     })(withParams(UsersApiComponent))
