@@ -11,6 +11,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
+import Login from "./components/Login/Login";
 
 const App = () => {
     return <BrowserRouter>
@@ -32,6 +33,7 @@ const App = () => {
                         <Route index element={<UsersContainer/>}/>
                         <Route path="/users/:page"  element={<UsersContainer/>}/>
                     </Route>
+                    <Route path="/login" element={<Login/>}/>
                 </Routes>
             </div>
             <Footer/>

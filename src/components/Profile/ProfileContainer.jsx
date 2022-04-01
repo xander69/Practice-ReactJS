@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import Profile from './Profile'
 import {getUserProfile} from '../../redux/profile-reducer'
 import {withParams} from '../../util/util'
+import {Navigate} from "react-router-dom";
 
 class ProfileContainer extends React.Component {
 
@@ -12,14 +13,17 @@ class ProfileContainer extends React.Component {
 
     loadProfile() {
         let userId = this.props.params.userId;
-        if (!userId) {
-            //TODO: load current user from auth
-            userId = 12
+        if (userId) {
+            this.props.getUserProfile(userId)
+        } else if (this.props.isAuth) {
+            this.props.getUserProfile(this.props.currentUser.id)
         }
-        this.props.getUserProfile(userId)
     }
 
     render() {
+        if (!this.props.isAuth) {
+            return <Navigate replace to={'/login'}/>
+        }
         return (
             <Profile {...this.props} profile={this.props.profile}/>
         )
@@ -27,7 +31,9 @@ class ProfileContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    profile: state.profilePage.profile
+    profile: state.profilePage.profile,
+    isAuth: state.auth.isAuth,
+    currentUser: state.auth.data
 })
 
 export default connect(
