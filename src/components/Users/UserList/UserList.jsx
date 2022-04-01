@@ -2,25 +2,12 @@ import React from "react";
 import s from './UserList.module.css'
 import Preloader from '../../common/Preloader/Preloader'
 import {NavLink} from 'react-router-dom'
-import {usersApi} from '../../../api/api'
 
 const UserList = (props) => {
 
-    const onFollow = (userId) => {
-        props.toggleFollowingProgress(true, userId)
-        usersApi.follow(userId).then(() => {
-            props.follow(userId)
-            props.toggleFollowingProgress(false, userId)
-        })
-    }
+    const onFollow = (userId) => props.follow(userId)
 
-    const onUnfollow = (userId) => {
-        props.toggleFollowingProgress(true, userId)
-        usersApi.unfollow(userId).then(() => {
-            props.unfollow(userId)
-            props.toggleFollowingProgress(false, userId)
-        })
-    }
+    const onUnfollow = (userId) => props.unfollow(userId)
 
     return <>
         {

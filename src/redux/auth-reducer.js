@@ -1,3 +1,5 @@
+import {authApi, usersApi} from '../api/api'
+
 const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA'
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
@@ -66,9 +68,42 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const setAuthUserData = (data) => ({type: SET_AUTH_USER_DATA, data})
-export const follow = (userId) => ({type: FOLLOW, userId})
-export const unfollow = (userId) => ({type: UNFOLLOW, userId})
-export const toggleFollowingProgress = (isFetching, userId) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId})
+const setAuthUserData = (data) => ({type: SET_AUTH_USER_DATA, data})
+const doFollow = (userId) => ({type: FOLLOW, userId})
+const doUnfollow = (userId) => ({type: UNFOLLOW, userId})
+const toggleFollowingProgress = (isFetching, userId) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId})
+
+export const getAuthUserData = () => {
+    return (dispatch) => {
+        authApi.authMe()
+            .then(data => {
+                dispatch(setAuthUserData(data))
+            })
+            .catch((error) => {
+                console.log(error.message)
+            })
+    }
+}
+
+export const follow = (userId) => {
+    return (dispatch) => {
+        dispatch(toggleFollowingProgress(true, userId))
+        usersApi.follow(userId).then(() => {
+            dispatch(doFollow(userId))
+            dispatch(toggleFollowingProgress(false, userId))
+        })
+    }
+}
+
+export const unfollow = (userId) => {
+    return (dispatch) => {
+        dispatch(toggleFollowingProgress(true, userId))
+        usersApi.unfollow(userId).then(() => {
+            dispatch(doUnfollow(userId))
+            dispatch(toggleFollowingProgress(false, userId))
+        })
+    }
+}
+
 export default authReducer
 

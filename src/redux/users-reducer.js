@@ -1,3 +1,5 @@
+import {usersApi} from '../api/api'
+
 const SET_USERS = 'SET_USERS'
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT'
@@ -42,31 +44,21 @@ const usersReducer = (state = initialState, action) => {
     }
 }
 
-export const setUsers = (users) => {
-    return {
-        type: SET_USERS,
-        users
-    }
-}
+const setCurrentPage = (pageNumber) => ({type: SET_CURRENT_PAGE, pageNumber})
+const setUsers = (users) => ({type: SET_USERS, users})
+const setTotalUsersCount = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, totalCount})
+const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 
-export const setCurrentPage = (pageNumber) => {
-    return {
-        type: SET_CURRENT_PAGE,
-        pageNumber
-    }
-}
-
-export const setTotalUsersCount = (totalCount) => {
-    return {
-        type: SET_TOTAL_USERS_COUNT,
-        totalCount
-    }
-}
-
-export const toggleIsFetching = (isFetching) => {
-    return {
-        type: TOGGLE_IS_FETCHING,
-        isFetching
+export const getUsers = (pageNumber, pageSize) => {
+    return (dispatch) => {
+        dispatch(toggleIsFetching(true))
+        usersApi.getUsers(pageNumber, pageSize)
+            .then(data => {
+                dispatch(setCurrentPage(pageNumber))
+                dispatch(setTotalUsersCount(data.totalUsersCount))
+                dispatch(setUsers(data.users))
+                dispatch(toggleIsFetching(false))
+            })
     }
 }
 

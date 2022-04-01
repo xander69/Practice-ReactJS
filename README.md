@@ -7,6 +7,7 @@
 * ReactJS Routing
 * Redux
 * ReactRedux
+* Redux Thunk
 * Rest API
 * Json-Server
 * Faker.js
@@ -27,6 +28,8 @@ npm install redux --save
 npm install react-redux --save
 
 npm install axios --save
+
+npm install redux-thunk --save
 ```
 
 Faker.js

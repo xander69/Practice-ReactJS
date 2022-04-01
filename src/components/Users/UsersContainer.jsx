@@ -1,17 +1,25 @@
-import {connect} from "react-redux";
-import UsersApiComponent from './UsersApiComponent'
+import React from 'react'
+import {connect} from 'react-redux'
 import {
-    setCurrentPage,
-    setTotalUsersCount,
-    setUsers,
-    toggleIsFetching
+    getUsers
 } from '../../redux/users-reducer'
 import {
     follow,
-    toggleFollowingProgress,
     unfollow
 } from '../../redux/auth-reducer'
 import {withParams} from '../../util/util'
+import Users from './Users'
+
+class UserComponent extends React.Component {
+    componentDidMount() {
+        const pageNumber = this.props.params.page ? this.props.params.page : this.props.currentPage
+        this.props.getUsers(pageNumber, this.props.pageSize)
+    }
+
+    render() {
+        return <Users {...this.props}/>
+    }
+}
 
 const mapStateToProps = (state) => {
     return {
@@ -31,9 +39,5 @@ export default connect(
     {
         follow,
         unfollow,
-        setUsers,
-        setCurrentPage,
-        setTotalUsersCount,
-        toggleIsFetching,
-        toggleFollowingProgress
-    })(withParams(UsersApiComponent))
+        getUsers
+    })(withParams(UserComponent))

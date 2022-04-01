@@ -1,3 +1,4 @@
+import {usersApi} from '../api/api'
 import * as util from '../util'
 
 const ADD_POST = 'ADD-POST'
@@ -88,24 +89,15 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
+export const addPostActionCreator = () => ({type: ADD_POST})
+export const updateNewPostTextActionCreator = (newText) => ({type: UPDATE_NEW_POST_TEXT, newText: newText})
+const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 
-export const addPostActionCreator = () => {
-    return {
-        type: ADD_POST
-    }
-
-}
-export const updateNewPostTextActionCreator = (newText) => {
-    return {
-        type: UPDATE_NEW_POST_TEXT,
-        newText: newText
-    }
-}
-
-export const setUserProfile = (profile) => {
-    return {
-        type: SET_USER_PROFILE,
-        profile
+export const getUserProfile = (userId) => {
+    return (dispatch) => {
+        usersApi.getUser(userId).then(data => {
+            dispatch(setUserProfile(data))
+        })
     }
 }
 

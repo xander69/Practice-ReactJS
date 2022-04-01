@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './Users.module.css'
 import UserList from './UserList/UserList'
-import {NavLink} from "react-router-dom";
+import {NavLink} from 'react-router-dom'
 
 const Users = (props) => {
 
@@ -17,7 +17,7 @@ const Users = (props) => {
             {pages.map(page => {
                 return <NavLink to={`/users/${page}`} key={page}
                                 className={`${s.pageLink} ${props.currentPage === page ? s.selected : undefined}`}
-                                onClick={() => props.onPageChange(page)}>{page}</NavLink>
+                                onClick={() => props.getUsers(page, props.pageSize)}>{page}</NavLink>
             })}
         </div>
         <UserList users={props.users}
