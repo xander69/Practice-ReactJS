@@ -1,14 +1,18 @@
 import React from 'react';
-import s from './About.module.css'
+import s from './ProfileInfo.module.css'
 import Preloader from '../../common/Preloader/Preloader'
+import ProfileStatus from './ProfileStatus'
 
-const About = (props) => {
+const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
     }
 
     return <div>
         <h1>{props.profile.fullName}</h1>
+        <div>
+            <ProfileStatus profile={props.profile} currentUser={props.currentUser} updateStatus={props.updateStatus}/>
+        </div>
         <div>
             <img className={s.avatar} src={props.profile.avatar} alt="avatar"/>
         </div>
@@ -42,4 +46,4 @@ const About = (props) => {
     </div>
 }
 
-export default About;
+export default ProfileInfo;

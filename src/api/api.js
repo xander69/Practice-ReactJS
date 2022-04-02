@@ -24,13 +24,19 @@ export const usersApi = {
                 }
             })
     },
-    getUser(userId) {
-        return instance.get(`/users/${userId}`).then(response => response.data)
-    },
     follow(userId) {
         return instance.post(`/follow/${userId}`, {})
     },
     unfollow(userId) {
         return instance.post(`/unfollow/${userId}`, {})
+    }
+}
+
+export const profileApi = {
+    getProfile(userId) {
+        return instance.get(`/users/${userId}`).then(response => response.data)
+    },
+    updateStatus(userId, status) {
+        return instance.patch(`/users/${userId}`, {status: status}).then(response => response.data)
     }
 }

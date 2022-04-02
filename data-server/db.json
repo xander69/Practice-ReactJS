@@ -9,7 +9,8 @@
       "followed": [1, 2, 3],
       "country": "Hungary",
       "city": "Cedar Park",
-      "email": "Doug74@hotmail.com"
+      "email": "Doug74@hotmail.com",
+      "status": "Beauty is less important than quality."
     },
     {
       "id": 2,
@@ -20,7 +21,8 @@
       "followed": [4, 5, 6],
       "country": "Timor-Leste",
       "city": "Commerce City",
-      "email": "Dawn67@gmail.com"
+      "email": "Dawn67@gmail.com",
+      "status": "Behind every successful man is a surprised woman"
     },
     {
       "id": 3,
@@ -31,7 +33,8 @@
       "followed": [7, 8, 9],
       "country": "Togo",
       "city": "Albuquerque",
-      "email": "Jody.OConner@gmail.com"
+      "email": "Jody.OConner@gmail.com",
+      "status": "Failure is not an option — it comes bundled with Windows"
     },
     {
       "id": 4,
@@ -42,7 +45,8 @@
       "followed": [10, 11, 12],
       "country": "Uganda",
       "city": "Edina",
-      "email": "Gloria.Upton@hotmail.com"
+      "email": "Gloria.Upton@hotmail.com",
+      "status": "Fool me once, shame on you, Fool me twice, and I’ll break your face"
     },
     {
       "id": 5,
@@ -64,7 +68,8 @@
       "followed": [16, 17, 18],
       "country": "Netherlands Antilles",
       "city": "Lincoln",
-      "email": "Dominic61@hotmail.com"
+      "email": "Dominic61@hotmail.com",
+      "status": "Got a problem with me? Solve it. Think I’m tripping? Tie my shoes. Can’t stand me? Sit back down. Can’t face me? Turn around"
     },
     {
       "id": 7,
@@ -75,7 +80,8 @@
       "followed": [19, 20, 21],
       "country": "British Indian Ocean Territory (Chagos Archipelago)",
       "city": "Rio Rancho",
-      "email": "Jeff94@yahoo.com"
+      "email": "Jeff94@yahoo.com",
+      "status": "Happiness is like a Butterfly. You keep running after it, it keeps flying away. If you stand still, It comes and sits on your shoulders"
     },
     {
       "id": 8,
@@ -86,7 +92,8 @@
       "followed": [22, 23, 24],
       "country": "Saint Lucia",
       "city": "Concord",
-      "email": "Faith7@hotmail.com"
+      "email": "Faith7@hotmail.com",
+      "status": "A mistake which makes you humble is much better than an achievement that makes you arrogant."
     },
     {
       "id": 9,
@@ -97,7 +104,8 @@
       "followed": [],
       "country": "Sierra Leone",
       "city": "Springdale",
-      "email": "Eddie.Wolff@gmail.com"
+      "email": "Eddie.Wolff@gmail.com",
+      "status": "Girls, please don’t die before your dead…"
     },
     {
       "id": 10,
@@ -108,7 +116,8 @@
       "followed": [],
       "country": "Senegal",
       "city": "State College",
-      "email": "Lucia_Abernathy@yahoo.com"
+      "email": "Lucia_Abernathy@yahoo.com",
+      "status": "A flower does not think of competing with the flower next to it. It just blooms"
     },
     {
       "id": 11,
@@ -119,7 +128,8 @@
       "followed": [],
       "country": "Christmas Island",
       "city": "Blacksburg",
-      "email": "Francis.Erdman68@gmail.com"
+      "email": "Francis.Erdman68@gmail.com",
+      "status": "I am in charge of how I feel and today I’m choosing happiness."
     },
     {
       "id": 12,
@@ -130,7 +140,8 @@
       "followed": [1, 4, 7, 8, 10, 20, 13],
       "country": "Saudi Arabia",
       "city": "Boston",
-      "email": "Douglas_Wyman@yahoo.com"
+      "email": "Douglas_Wyman@yahoo.com",
+      "status": "Beautiful things can happen when you distance yourself from negative"
     },
     {
       "id": 13,
@@ -152,7 +163,8 @@
       "followed": [],
       "country": "Uzbekistan",
       "city": "Oxnard",
-      "email": "Shelley11@gmail.com"
+      "email": "Shelley11@gmail.com",
+      "status": "The heart is equal to a mirror, Mirror shows reflection, & Heart shows affection. Both have one equal quality, can’t be reformed once broken.!"
     },
     {
       "id": 15,
@@ -163,7 +175,8 @@
       "followed": [],
       "country": "Martinique",
       "city": "Roswell",
-      "email": "Constance_Nikolaus28@yahoo.com"
+      "email": "Constance_Nikolaus28@yahoo.com",
+      "status": "His story is History, My Story is Mystery"
     },
     {
       "id": 16,
@@ -174,7 +187,8 @@
       "followed": [],
       "country": "Benin",
       "city": "Victorville",
-      "email": "Fernando64@yahoo.com"
+      "email": "Fernando64@yahoo.com",
+      "status": "My love for you is a journey starting at forever and ending at never"
     },
     {
       "id": 17,
@@ -185,7 +199,8 @@
       "followed": [],
       "country": "Armenia",
       "city": "Lenexa",
-      "email": "Jennie32@hotmail.com"
+      "email": "Jennie32@hotmail.com",
+      "status": "My one hand is enough to fight against the world… If you hold the other one"
     },
     {
       "id": 18,
@@ -196,7 +211,8 @@
       "followed": [],
       "country": "Libyan Arab Jamahiriya",
       "city": "Columbia",
-      "email": "Rudy35@hotmail.com"
+      "email": "Rudy35@hotmail.com",
+      "status": "My style is unique don’t copy it!"
     },
     {
       "id": 19,
@@ -207,7 +223,8 @@
       "followed": [],
       "country": "Kuwait",
       "city": "Janesville",
-      "email": "Geneva_Murazik11@gmail.com"
+      "email": "Geneva_Murazik11@gmail.com",
+      "status": "Sometimes you have to let go of your fear to catch your destiny"
     },
     {
       "id": 20,
@@ -218,7 +235,8 @@
       "followed": [],
       "country": "Samoa",
       "city": "Duluth",
-      "email": "Meredith84@yahoo.com"
+      "email": "Meredith84@yahoo.com",
+      "status": "Sometimes you succeed… and other times you learn"
     },
     {
       "id": 21,
@@ -229,7 +247,8 @@
       "followed": [],
       "country": "Netherlands Antilles",
       "city": "Montebello",
-      "email": "Loretta_Fritsch@gmail.com"
+      "email": "Loretta_Fritsch@gmail.com",
+      "status": "Stay Strong, Make them wonder how you’re still smiling"
     },
     {
       "id": 22,
@@ -251,7 +270,8 @@
       "followed": [],
       "country": "Dominica",
       "city": "Fountain Valley",
-      "email": "Levi.Trantow@gmail.com"
+      "email": "Levi.Trantow@gmail.com",
+      "status": "It is up to you to see the beauty of everyday things"
     },
     {
       "id": 24,
@@ -262,7 +282,8 @@
       "followed": [],
       "country": "Madagascar",
       "city": "Smyrna",
-      "email": "Steve14@hotmail.com"
+      "email": "Steve14@hotmail.com",
+      "status": "People come and go…the best will stay"
     },
     {
       "id": 25,
@@ -273,7 +294,8 @@
       "followed": [],
       "country": "Cocos (Keeling) Islands",
       "city": "East Honolulu",
-      "email": "Mona_Ziemann24@hotmail.com"
+      "email": "Mona_Ziemann24@hotmail.com",
+      "status": "Silence and smile are the powerful tools, smile solves all your problems, silence keeps all your problems at bay."
     },
     {
       "id": 26,
@@ -284,7 +306,8 @@
       "followed": [],
       "country": "Italy",
       "city": "Dearborn",
-      "email": "Chris.Kirlin81@yahoo.com"
+      "email": "Chris.Kirlin81@yahoo.com",
+      "status": "Smile, Happy looks good on you"
     },
     {
       "id": 27,
@@ -295,7 +318,8 @@
       "followed": [],
       "country": "Afghanistan",
       "city": "Altoona",
-      "email": "Nina.Bartell@hotmail.com"
+      "email": "Nina.Bartell@hotmail.com",
+      "status": "Sometimes people are beautiful not in looks, just in the way there are."
     },
     {
       "id": 28,
@@ -306,7 +330,8 @@
       "followed": [],
       "country": "Christmas Island",
       "city": "Harrisonburg",
-      "email": "Zachary15@yahoo.com"
+      "email": "Zachary15@yahoo.com",
+      "status": "I am willing to make the mistakes if someone else is willing to learn from them"
     },
     {
       "id": 29,
@@ -317,7 +342,8 @@
       "followed": [],
       "country": "Chad",
       "city": "Greeley",
-      "email": "Herman87@hotmail.com"
+      "email": "Herman87@hotmail.com",
+      "status": "I don’t have time to hate people who hate me because I’m too busy loving people who love me"
     },
     {
       "id": 30,
@@ -328,7 +354,8 @@
       "followed": [],
       "country": "Belgium",
       "city": "Compton",
-      "email": "Marion_McClure@yahoo.com"
+      "email": "Marion_McClure@yahoo.com",
+      "status": "A friend to all is a friend to none"
     },
     {
       "id": 31,
@@ -339,7 +366,8 @@
       "followed": [],
       "country": "Central African Republic",
       "city": "Ogden",
-      "email": "Kathy.McClure95@gmail.com"
+      "email": "Kathy.McClure95@gmail.com",
+      "status": "It’s cute when your crush’s crush is you."
     },
     {
       "id": 32,
@@ -361,7 +389,8 @@
       "followed": [],
       "country": "Benin",
       "city": "Paterson",
-      "email": "Daniel73@yahoo.com"
+      "email": "Daniel73@yahoo.com",
+      "status": "It’s easy to stand with the crowd, It takes courage to stand alone."
     },
     {
       "id": 34,
@@ -372,7 +401,8 @@
       "followed": [],
       "country": "Slovenia",
       "city": "Anchorage",
-      "email": "Gregory.Renner91@gmail.com"
+      "email": "Gregory.Renner91@gmail.com",
+      "status": "It’s so funny when I’m loud, people tell me to be quiet, but when I am quiet people ask me what’s wrong with me."
     },
     {
       "id": 35,
@@ -383,7 +413,8 @@
       "followed": [],
       "country": "Netherlands",
       "city": "Berkeley",
-      "email": "Veronica.Pouros@hotmail.com"
+      "email": "Veronica.Pouros@hotmail.com",
+      "status": "It’s time to start something new and trust the magic of beginnings."
     },
     {
       "id": 36,
@@ -394,7 +425,8 @@
       "followed": [],
       "country": "Andorra",
       "city": "Santa Barbara",
-      "email": "Donald87@yahoo.com"
+      "email": "Donald87@yahoo.com",
+      "status": "Joy is the simplest form of gratitude."
     },
     {
       "id": 37,
@@ -416,7 +448,8 @@
       "followed": [],
       "country": "China",
       "city": "Bethesda",
-      "email": "Edith_Bogisich@hotmail.com"
+      "email": "Edith_Bogisich@hotmail.com",
+      "status": "Keep smiling..one day life will get tired of upsetting you"
     },
     {
       "id": 39,
@@ -427,7 +460,8 @@
       "followed": [],
       "country": "Sri Lanka",
       "city": "Ocala",
-      "email": "Kerry52@gmail.com"
+      "email": "Kerry52@gmail.com",
+      "status": "Let your smile change the world. Don’t let the world change your smile."
     },
     {
       "id": 40,
@@ -438,7 +472,8 @@
       "followed": [],
       "country": "Lao People's Democratic Republic",
       "city": "Springdale",
-      "email": "Simon.OConner@yahoo.com"
+      "email": "Simon.OConner@yahoo.com",
+      "status": "Making mistakes is better than faking perfections"
     },
     {
       "id": 41,
@@ -449,7 +484,8 @@
       "followed": [],
       "country": "New Caledonia",
       "city": "Somerville",
-      "email": "Angelica.Turner2@yahoo.com"
+      "email": "Angelica.Turner2@yahoo.com",
+      "status": "True friends are like stars- they shine best when your world is in darkness!"
     },
     {
       "id": 42,
@@ -460,7 +496,8 @@
       "followed": [],
       "country": "Eritrea",
       "city": "East Los Angeles",
-      "email": "Barry.Williamson7@hotmail.com"
+      "email": "Barry.Williamson7@hotmail.com",
+      "status": "Was going to rob a bank today but the pen was chained to the desk."
     },
     {
       "id": 43,
@@ -482,7 +519,8 @@
       "followed": [],
       "country": "Tonga",
       "city": "Tinley Park",
-      "email": "Daisy.Fay@yahoo.com"
+      "email": "Daisy.Fay@yahoo.com",
+      "status": "When I smile I am hiding a tear inside. When I laugh I am hiding the pain inside. When I say everything is OK nothing is."
     },
     {
       "id": 45,
@@ -493,7 +531,8 @@
       "followed": [],
       "country": "Lao People's Democratic Republic",
       "city": "Wheaton",
-      "email": "Madeline.Dibbert@yahoo.com"
+      "email": "Madeline.Dibbert@yahoo.com",
+      "status": "I never lose, either I WIN or I LEARN."
     },
     {
       "id": 46,
@@ -504,7 +543,8 @@
       "followed": [],
       "country": "Cambodia",
       "city": "Miami Beach",
-      "email": "Phyllis_Trantow17@hotmail.com"
+      "email": "Phyllis_Trantow17@hotmail.com",
+      "status": "I’d rather be hated for who I am than loved for who I am not."
     },
     {
       "id": 47,
@@ -515,7 +555,8 @@
       "followed": [],
       "country": "Maldives",
       "city": "South Jordan",
-      "email": "Francis49@gmail.com"
+      "email": "Francis49@gmail.com",
+      "status": "Never walk alone, develop multiple personalities"
     },
     {
       "id": 48,
@@ -526,7 +567,8 @@
       "followed": [],
       "country": "Slovenia",
       "city": "Rogers",
-      "email": "Sheryl.Jacobs@hotmail.com"
+      "email": "Sheryl.Jacobs@hotmail.com",
+      "status": "I have seen the best of you, and the worst of you, and I choose both…"
     },
     {
       "id": 49,
@@ -537,7 +579,8 @@
       "followed": [],
       "country": "Poland",
       "city": "Perris",
-      "email": "Moses93@hotmail.com"
+      "email": "Moses93@hotmail.com",
+      "status": "I just find myself happy with the simple things. Appreciating the blessings God gave me."
     },
     {
       "id": 50,
@@ -548,7 +591,8 @@
       "followed": [],
       "country": "Guinea-Bissau",
       "city": "Rowlett",
-      "email": "Armando_VonRueden65@yahoo.com"
+      "email": "Armando_VonRueden65@yahoo.com",
+      "status": "Inhale confidence. Exhale Doubt."
     }
   ]
 }

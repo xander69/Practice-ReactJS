@@ -27,3 +27,8 @@
 .tableBody {
     display: table-row-group;
 }
+
+.statusLine {
+    padding-bottom: 20px;
+    font-style: italic;
+}

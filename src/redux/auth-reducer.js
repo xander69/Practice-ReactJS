@@ -1,9 +1,10 @@
-import {authApi, usersApi} from '../api/api'
+import {authApi, profileApi, usersApi} from '../api/api'
 
 const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA'
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS'
+const SET_STATUS = 'SET_STATUS'
 
 let initialState = {
     isAuth: false,
@@ -17,7 +18,8 @@ let initialState = {
         followed: [],
         country: null,
         city: null,
-        email: null
+        email: null,
+        status: null
     }
 }
 
@@ -63,6 +65,15 @@ const authReducer = (state = initialState, action) => {
                     : state.followingInProgress.filter(id => id !== action.userId)
             }
         }
+        case SET_STATUS: {
+            return {
+                ...state,
+                data: {
+                    ...state.data,
+                    status: action.status
+                }
+            }
+        }
         default:
             return state
     }
@@ -72,6 +83,7 @@ const setAuthUserData = (data) => ({type: SET_AUTH_USER_DATA, data})
 const doFollow = (userId) => ({type: FOLLOW, userId})
 const doUnfollow = (userId) => ({type: UNFOLLOW, userId})
 const toggleFollowingProgress = (isFetching, userId) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId})
+const setStatus = (status) => ({type: SET_STATUS, status})
 
 export const getAuthUserData = () => {
     return (dispatch) => {
@@ -104,6 +116,13 @@ export const unfollow = (userId) => {
         })
     }
 }
+
+export const updateStatus = (userId, status) =>
+    (dispatch) => {
+        profileApi.updateStatus(userId, status).then(response => {
+            dispatch(setStatus(response.status))
+        })
+    }
 
 export default authReducer
 
