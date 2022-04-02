@@ -24,13 +24,11 @@ const UserList = (props) => {
                                 </div>
                                 <div className={s.userCardAction}>
                                     {
-                                        props.isAuth ?
-                                            props.currentUser.followed.includes(user.id)
-                                                ? <button disabled={props.followingInProgress.includes(user.id)}
-                                                          onClick={() => onUnfollow(user.id)}>Unfollow</button>
-                                                : <button disabled={props.followingInProgress.includes(user.id)}
-                                                          onClick={() => onFollow(user.id)}>Follow</button>
-                                            : <span/>
+                                        props.currentUser.followed.includes(user.id)
+                                            ? <button disabled={props.followingInProgress.includes(user.id)}
+                                                      onClick={() => onUnfollow(user.id)}>Unfollow</button>
+                                            : <button disabled={props.followingInProgress.includes(user.id)}
+                                                      onClick={() => onFollow(user.id)}>Follow</button>
                                     }
                                 </div>
                                 <div className={s.userCardHeader}>

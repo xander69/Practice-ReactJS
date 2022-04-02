@@ -2,7 +2,6 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem'
 import DialogMessage from './DialogMessage/DialogMessage'
-import {Navigate} from 'react-router-dom'
 
 const Dialogs = (props) => {
 
@@ -20,10 +19,6 @@ const Dialogs = (props) => {
     let onNewMessageChange = (e) => {
         let newText = e.target.value
         props.updateNewMessage(newText)
-    }
-
-    if (props.isAuth === false) {
-        return <Navigate replace to={'/login'}/>
     }
 
     return <div>

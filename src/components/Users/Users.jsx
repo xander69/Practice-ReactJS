@@ -24,7 +24,6 @@ const Users = (props) => {
                   isFetching={props.isFetching}
                   follow={props.follow}
                   unfollow={props.unfollow}
-                  isAuth={props.isAuth}
                   currentUser={props.currentUser}
                   followingInProgress={props.followingInProgress}
                   toggleFollowingProgress={props.toggleFollowingProgress}/>

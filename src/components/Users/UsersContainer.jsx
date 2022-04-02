@@ -8,6 +8,7 @@ import {
     unfollow
 } from '../../redux/auth-reducer'
 import {withParams} from '../../util/util'
+import {withAuthRedirect} from '../../hoc/withAuthRedirect'
 import Users from './Users'
 
 class UserComponent extends React.Component {
@@ -28,16 +29,15 @@ const mapStateToProps = (state) => {
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
-        isAuth: state.auth.isAuth,
         currentUser: state.auth.data,
         followingInProgress: state.auth.followingInProgress
     }
 }
 
-export default connect(
+export default withAuthRedirect(connect(
     mapStateToProps,
     {
         follow,
         unfollow,
         getUsers
-    })(withParams(UserComponent))
+    })(withParams(UserComponent)))
