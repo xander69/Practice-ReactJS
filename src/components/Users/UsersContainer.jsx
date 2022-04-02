@@ -1,15 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {
-    getUsers
-} from '../../redux/users-reducer'
-import {
-    follow,
-    unfollow
-} from '../../redux/auth-reducer'
+import {getUsers} from '../../redux/users-reducer'
+import {follow, unfollow} from '../../redux/auth-reducer'
 import {withRouterParams} from '../../hoc/withRouterParams'
 import {withAuthRedirect} from '../../hoc/withAuthRedirect'
 import Users from './Users'
+import {compose} from 'redux'
 
 class UserComponent extends React.Component {
     componentDidMount() {
@@ -34,10 +30,14 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default withAuthRedirect(connect(
-    mapStateToProps,
-    {
-        follow,
-        unfollow,
-        getUsers
-    })(withRouterParams(UserComponent)))
+export default compose(
+    connect(
+        mapStateToProps,
+        {
+            follow,
+            unfollow,
+            getUsers
+        }),
+    withRouterParams,
+    withAuthRedirect
+)(UserComponent)
