@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from 'react-redux'
 import Profile from './Profile'
 import {getUserProfile} from '../../redux/profile-reducer'
-import {withParams} from '../../util/util'
+import {withRouterParams} from '../../hoc/withRouterParams'
 import {withAuthRedirect} from '../../hoc/withAuthRedirect'
 
 class ProfileContainer extends React.Component {
@@ -38,4 +38,4 @@ export default connect(
     mapStateToProps,
     {
         getUserProfile
-    })(withParams(AuthRedirectComponent))
+    })(withRouterParams(AuthRedirectComponent))

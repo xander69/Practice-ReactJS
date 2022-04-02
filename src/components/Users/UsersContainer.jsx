@@ -7,7 +7,7 @@ import {
     follow,
     unfollow
 } from '../../redux/auth-reducer'
-import {withParams} from '../../util/util'
+import {withRouterParams} from '../../hoc/withRouterParams'
 import {withAuthRedirect} from '../../hoc/withAuthRedirect'
 import Users from './Users'
 
@@ -40,4 +40,4 @@ export default withAuthRedirect(connect(
         follow,
         unfollow,
         getUsers
-    })(withParams(UserComponent)))
+    })(withRouterParams(UserComponent)))
