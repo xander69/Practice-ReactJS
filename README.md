@@ -52,6 +52,8 @@ npm init
 
 npm install json-server --save-dev
 
+npm install uuid --save
+
 node index.js
 ```
 
