@@ -36,7 +36,6 @@
     color: white;
 }
 
-.headerLogin a {
-    color: white;
-    text-decoration: none;
+.loginLogoutButton {
+    padding-left: 20px;
 }

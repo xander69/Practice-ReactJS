@@ -1,5 +1,6 @@
 import {authApi, profileApi, usersApi} from '../api/api'
 
+const SET_SESSION_GUID = 'SET_SESSION_GUID'
 const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA'
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
@@ -8,6 +9,7 @@ const SET_STATUS = 'SET_STATUS'
 
 let initialState = {
     isAuth: false,
+    sessionGuid: null,
     followingInProgress: [],
     data: {
         id: null,
@@ -25,10 +27,16 @@ let initialState = {
 
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
+        case SET_SESSION_GUID: {
+            return {
+                ...state,
+                sessionGuid: action.sessionGuid
+            }
+        }
         case SET_AUTH_USER_DATA: {
             return {
                 ...state,
-                isAuth: true,
+                isAuth: action.isAuth,
                 data: action.data
             }
         }
@@ -79,17 +87,44 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-const setAuthUserData = (data) => ({type: SET_AUTH_USER_DATA, data})
+const setSessionGuid = (sessionGuid) => ({type: SET_SESSION_GUID, sessionGuid})
+const setAuthUserData = (data, isAuth) => ({type: SET_AUTH_USER_DATA, data, isAuth})
 const doFollow = (userId) => ({type: FOLLOW, userId})
 const doUnfollow = (userId) => ({type: UNFOLLOW, userId})
 const toggleFollowingProgress = (isFetching, userId) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId})
 const setStatus = (status) => ({type: SET_STATUS, status})
 
+export const login = (username, password) => {
+    return (dispatch) => {
+        authApi.login(username, password)
+            .then(data => {
+                dispatch(setSessionGuid(data.sessionGuid))
+                dispatch(getAuthUserData())
+            })
+            .catch((error) => {
+                console.log(error.message)
+            })
+    }
+}
+
+export const logout = () => {
+    return (dispatch) => {
+        authApi.logout()
+            .then(() => {
+                dispatch(setSessionGuid(null))
+                dispatch(setAuthUserData(null, false))
+            })
+            .catch((error) => {
+                console.log(error.message)
+            })
+    }
+}
+
 export const getAuthUserData = () => {
     return (dispatch) => {
         authApi.authMe()
             .then(data => {
-                dispatch(setAuthUserData(data))
+                dispatch(setAuthUserData(data, true))
             })
             .catch((error) => {
                 console.log(error.message)

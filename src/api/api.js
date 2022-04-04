@@ -1,15 +1,24 @@
 import axios from 'axios'
+import store from '../redux/redux-store'
 
 const instance = axios.create({
-    baseURL: 'http://localhost:9000/api/1.0',
-    headers: {
-        'With-Credential': true
-    }
+    baseURL: 'http://localhost:9000/api/1.0'
+})
+
+instance.interceptors.request.use((config) => {
+    config.headers.common['With-Credential'] = store.getState().auth.sessionGuid;
+    return config;
 })
 
 export const authApi = {
     authMe() {
         return instance.get('/auth/me').then(response => response.data)
+    },
+    login(username, password) {
+        return instance.post('/login', {username, password}).then(response => response.data)
+    },
+    logout() {
+        return instance.get('/logout')
     }
 }
 

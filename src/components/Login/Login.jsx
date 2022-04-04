@@ -1,10 +1,13 @@
 import React from 'react'
 import {Field, Form} from 'react-final-form'
 import s from './Login.module.css'
+import {connect} from 'react-redux'
+import {login} from '../../redux/auth-reducer'
+import {Navigate} from 'react-router-dom'
 
-const LoginForm = () => {
+const LoginForm = (props) => {
     return <Form onSubmit={formData => {
-        console.log(formData)
+        props.login(formData.username, formData.password)
     }}>
         {({handleSubmit, submitting}) => (
             <form className={s.loginForm} onSubmit={handleSubmit}>
@@ -28,11 +31,20 @@ const LoginForm = () => {
     </Form>
 }
 
-const Login = () => {
+const Login = (props) => {
+
+    if (props.isAuth) {
+        return <Navigate replace to={'/profile'}/>
+    }
+
     return <div>
         <h1>Login</h1>
-        <LoginForm/>
+        <LoginForm {...props}/>
     </div>
 }
 
-export default Login
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+})
+
+export default connect(mapStateToProps, {login})(Login)
