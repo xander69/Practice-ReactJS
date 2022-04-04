@@ -13,6 +13,7 @@
 * Json-Server
 * Faker.js
 * Axios
+* js-cookie
 
 ### Getting started
 
@@ -32,7 +33,9 @@ npm install axios --save
 
 npm install redux-thunk --save
 
-npm install --save final-form react-final-form
+npm install final-form react-final-form --save
+
+npm install js-cookie --save
 ```
 
 Faker.js

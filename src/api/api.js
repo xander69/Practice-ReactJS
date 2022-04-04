@@ -1,13 +1,15 @@
 import axios from 'axios'
-import store from '../redux/redux-store'
+import Cookies from 'js-cookie'
+
+const SESSION_GUID_COOKIE = 'Session-Guid'
 
 const instance = axios.create({
     baseURL: 'http://localhost:9000/api/1.0'
 })
 
 instance.interceptors.request.use((config) => {
-    config.headers.common['With-Credential'] = store.getState().auth.sessionGuid;
-    return config;
+    config.headers.common['With-Credential'] = Cookies.get(SESSION_GUID_COOKIE)
+    return config
 })
 
 export const authApi = {
@@ -15,10 +17,18 @@ export const authApi = {
         return instance.get('/auth/me').then(response => response.data)
     },
     login(username, password) {
-        return instance.post('/login', {username, password}).then(response => response.data)
+        return instance.post('/login', {username, password}).then(response => {
+            Cookies.set(SESSION_GUID_COOKIE,
+                response.data.sessionGuid,
+                {sameSite: 'None', secure: true})
+            return response.data
+        })
     },
     logout() {
-        return instance.get('/logout')
+        return instance.get('/logout').then(response => {
+            Cookies.remove(SESSION_GUID_COOKIE)
+            return response.data
+        })
     }
 }
 

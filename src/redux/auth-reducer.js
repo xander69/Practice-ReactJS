@@ -1,6 +1,5 @@
 import {authApi, profileApi, usersApi} from '../api/api'
 
-const SET_SESSION_GUID = 'SET_SESSION_GUID'
 const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA'
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
@@ -9,7 +8,6 @@ const SET_STATUS = 'SET_STATUS'
 
 let initialState = {
     isAuth: false,
-    sessionGuid: null,
     followingInProgress: [],
     data: {
         id: null,
@@ -27,12 +25,6 @@ let initialState = {
 
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_SESSION_GUID: {
-            return {
-                ...state,
-                sessionGuid: action.sessionGuid
-            }
-        }
         case SET_AUTH_USER_DATA: {
             return {
                 ...state,
@@ -87,7 +79,6 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-const setSessionGuid = (sessionGuid) => ({type: SET_SESSION_GUID, sessionGuid})
 const setAuthUserData = (data, isAuth) => ({type: SET_AUTH_USER_DATA, data, isAuth})
 const doFollow = (userId) => ({type: FOLLOW, userId})
 const doUnfollow = (userId) => ({type: UNFOLLOW, userId})
@@ -97,8 +88,7 @@ const setStatus = (status) => ({type: SET_STATUS, status})
 export const login = (username, password) => {
     return (dispatch) => {
         authApi.login(username, password)
-            .then(data => {
-                dispatch(setSessionGuid(data.sessionGuid))
+            .then(() => {
                 dispatch(getAuthUserData())
             })
             .catch((error) => {
@@ -111,7 +101,6 @@ export const logout = () => {
     return (dispatch) => {
         authApi.logout()
             .then(() => {
-                dispatch(setSessionGuid(null))
                 dispatch(setAuthUserData(null, false))
             })
             .catch((error) => {
