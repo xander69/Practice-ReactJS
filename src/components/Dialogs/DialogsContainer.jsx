@@ -1,4 +1,3 @@
-import React from 'react'
 import {sendMessageActionCreator, updateNewMessageTextActionCreator} from '../../redux/dialog-reducer'
 import {connect} from 'react-redux'
 import {withAuthRedirect} from '../../hoc/withAuthRedirect'

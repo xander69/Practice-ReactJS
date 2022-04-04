@@ -8,6 +8,7 @@
 * Redux
 * ReactRedux
 * Redux Thunk
+* React Final Form
 * Rest API
 * Json-Server
 * Faker.js
@@ -30,6 +31,8 @@ npm install react-redux --save
 npm install axios --save
 
 npm install redux-thunk --save
+
+npm install --save final-form react-final-form
 ```
 
 Faker.js
