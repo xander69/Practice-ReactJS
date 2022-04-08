@@ -1,7 +1,6 @@
 import * as util from '../util'
 
 const SEND_MESSAGE = 'SEND-MESSAGE'
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
 
 const initialState = {
     dialogs: [
@@ -18,8 +17,7 @@ const initialState = {
         {id: 3, message: 'I\'m fine'},
         {id: 4, message: 'Yo yo yo'},
         {id: 5, message: 'Bla-bla-bla'}
-    ],
-    newMessageText: ''
+    ]
 }
 
 const dialogReducer = (state = initialState, action) => {
@@ -31,16 +29,9 @@ const dialogReducer = (state = initialState, action) => {
                     ...state.messages,
                     {
                         id: util.getLastId(state.messages) + 1,
-                        message: state.newMessageText
+                        message: action.messageText
                     }
-                ],
-                newMessageText: ''
-            }
-        }
-        case UPDATE_NEW_MESSAGE_TEXT: {
-            return {
-                ...state,
-                newMessageText: action.newText
+                ]
             }
         }
         default:
@@ -48,16 +39,11 @@ const dialogReducer = (state = initialState, action) => {
     }
 }
 
-export const sendMessageActionCreator = () => {
-    return {
-        type: SEND_MESSAGE
-    }
-}
+const sentMessageActionCreator = (messageText) => ({type: SEND_MESSAGE, messageText})
 
-export const updateNewMessageTextActionCreator = (newText) => {
-    return {
-        type: UPDATE_NEW_MESSAGE_TEXT,
-        newText: newText
+export const sendMessage = (messageText) => {
+    return (dispatch) => {
+        dispatch(sentMessageActionCreator(messageText))
     }
 }
 

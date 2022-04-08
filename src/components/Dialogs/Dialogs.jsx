@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem'
 import DialogMessage from './DialogMessage/DialogMessage'
+import {Field, Form} from 'react-final-form'
 
 const Dialogs = (props) => {
 
@@ -11,15 +12,6 @@ const Dialogs = (props) => {
 
     let messagesElements = props.dialogPage.messages
         .map(message => <DialogMessage key={message.id} message={message}/>)
-
-    let onSendMessageClick = () => {
-        props.sendMessage()
-    }
-
-    let onNewMessageChange = (e) => {
-        let newText = e.target.value
-        props.updateNewMessage(newText)
-    }
 
     return <div>
         <h1>Dialogs</h1>
@@ -31,19 +23,30 @@ const Dialogs = (props) => {
                 <div>
                     {messagesElements}
                 </div>
-                <div>
-                    <div>
-                        <textarea onChange={onNewMessageChange}
-                                  value={props.dialogPage.newMessageText}
-                                  placeholder='Enter new message'/>
-                    </div>
-                    <div>
-                        <button onClick={onSendMessageClick}>Send</button>
-                    </div>
-                </div>
+                <AddMessageForm {...props}/>
             </div>
         </div>
     </div>
+}
+
+const AddMessageForm = (props) => {
+    return <Form onSubmit={formData => {
+        props.sendMessage(formData.newMessageText)
+    }}>
+        {({handleSubmit, submitting}) => (
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <Field name={'newMessageText'} component={'textarea'}
+                           placeholder={'Enter new message'}/>
+                </div>
+                <div>
+                    <button type="submit" disabled={submitting}>
+                        Send
+                    </button>
+                </div>
+            </form>
+        )}
+    </Form>
 }
 
 export default Dialogs;
