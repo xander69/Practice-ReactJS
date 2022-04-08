@@ -2,7 +2,6 @@ import {profileApi} from '../api/api'
 import * as util from '../util'
 
 const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 const SET_USER_PROFILE = 'SET_USER_PROFILE'
 
 const initialState = {
@@ -50,7 +49,6 @@ const initialState = {
             avatar: 'https://avataaars.io/?avatarStyle=Circle&topType=Hijab&accessoriesType=Kurt&hatColor=Blue03&clotheType=ShirtVNeck&clotheColor=Gray01&eyeType=Close&eyebrowType=AngryNatural&mouthType=Eating&skinColor=Tanned'
         }
     ],
-    newPostText: 'default message text',
     profile: null
 }
 
@@ -63,19 +61,12 @@ const profileReducer = (state = initialState, action) => {
                     ...state.posts,
                     {
                         id: util.getLastId(state.posts) + 1,
-                        message: state.newPostText,
+                        message: action.postText,
                         dateTime: util.formatDate(new Date()),
                         likeCount: 0,
                         avatar: util.defaultAvatar
                     }
-                ],
-                newPostText: ''
-            }
-        }
-        case UPDATE_NEW_POST_TEXT: {
-            return {
-                ...state,
-                newPostText: action.newText
+                ]
             }
         }
         case SET_USER_PROFILE: {
@@ -89,8 +80,7 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const updateNewPostTextActionCreator = (newText) => ({type: UPDATE_NEW_POST_TEXT, newText: newText})
+const addPostActionCreator = (postText) => ({type: ADD_POST, postText})
 const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 
 export const getUserProfile = (userId) => {
@@ -98,6 +88,12 @@ export const getUserProfile = (userId) => {
         profileApi.getProfile(userId).then(data => {
             dispatch(setUserProfile(data))
         })
+    }
+}
+
+export const addPost = (postText) => {
+    return (dispatch) => {
+        dispatch(addPostActionCreator(postText))
     }
 }
 
