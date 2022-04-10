@@ -1,3 +1,9 @@
 .loginForm div {
     padding-bottom: 5px;
 }
+
+.error {
+    color: red;
+    font-size: 10pt;
+    margin-bottom: 10px;
+}

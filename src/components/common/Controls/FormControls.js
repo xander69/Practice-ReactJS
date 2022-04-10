@@ -2,19 +2,15 @@ import React from 'react'
 import styles from './FormControls.module.css'
 
 const FormControl = ({input, meta, ...props}) => {
-    const hasError = meta.touched && meta.error
+    const hasError = meta.touched && (meta.error || meta.submitError)
     return (
-        <div className={styles.formControl + (hasError ? ' ' + styles.error : '')}>
-            <div>
-                {props.children}
-            </div>
-            {hasError && <div className={styles.error}>
-                <span>
-                    {meta.error}
+        <span className={styles.formControl + (hasError ? ' ' + styles.error : '')}>
+            {props.children}
+            {hasError && <span className={styles.error}>
+                    {(meta.error || meta.submitError)}
                 </span>
-            </div>
             }
-        </div>
+        </span>
     )
 }
 

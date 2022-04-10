@@ -43,9 +43,9 @@ const authMe = (req, res) => {
 const login = (req, res) => {
     const user = db.get('users').find({username: req.body.username}).value()
     if (!user) {
-        res.status(403).json({reason: 'username'})
+        res.status(403).json({error: 'Invalid username'})
     } else if (user.password !== req.body.password) {
-        res.status(403).json({reason: 'password'})
+        res.status(403).json({error: 'Invalid password'})
     } else {
         let session = db.get('sessions').find({userId: user.id}).value();
         if (!session) {

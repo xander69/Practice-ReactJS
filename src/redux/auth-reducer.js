@@ -1,4 +1,5 @@
 import {authApi, profileApi, usersApi} from '../api/api'
+import {FORM_ERROR} from 'final-form'
 
 const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA'
 const FOLLOW = 'FOLLOW'
@@ -85,14 +86,16 @@ const doUnfollow = (userId) => ({type: UNFOLLOW, userId})
 const toggleFollowingProgress = (isFetching, userId) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId})
 const setStatus = (status) => ({type: SET_STATUS, status})
 
-export const login = (username, password) => {
+export const login = (username, password, resolve) => {
     return (dispatch) => {
         authApi.login(username, password)
             .then(() => {
                 dispatch(getAuthUserData())
+                resolve()
             })
             .catch((error) => {
                 console.log(error.message)
+                resolve({[FORM_ERROR]: error.response.data.error})
             })
     }
 }

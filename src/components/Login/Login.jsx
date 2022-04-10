@@ -9,10 +9,11 @@ import {requiredField} from '../../util/validators'
 
 const LoginForm = (props) => {
     return <Form onSubmit={formData => {
-        props.login(formData.username, formData.password)
+        return new Promise(resolve => props.login(formData.username, formData.password, resolve))
     }}>
-        {({handleSubmit, submitting}) => (
+        {({submitError, handleSubmit, submitting}) => (
             <form className={s.loginForm} onSubmit={handleSubmit}>
+                {submitError && <div className={s.error}>{submitError}</div>}
                 <div>
                     <Field name={'username'} component={Input}
                            validate={requiredField}
