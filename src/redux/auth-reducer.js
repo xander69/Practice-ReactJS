@@ -112,16 +112,14 @@ export const logout = () => {
     }
 }
 
-export const getAuthUserData = () => {
-    return (dispatch) => {
-        authApi.authMe()
-            .then(data => {
-                dispatch(setAuthUserData(data, true))
-            })
-            .catch((error) => {
-                console.log(error.message)
-            })
-    }
+export const getAuthUserData = () => (dispatch) => {
+    return authApi.authMe()
+        .then(data => {
+            dispatch(setAuthUserData(data, true))
+        })
+        .catch((error) => {
+            console.log(error.message)
+        })
 }
 
 export const follow = (userId) => {
