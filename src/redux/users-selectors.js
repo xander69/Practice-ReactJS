@@ -1,4 +1,6 @@
-export const getUsers = (state) => {
+import {createSelector} from 'reselect'
+
+const getUsersPrimitiveSelector = (state) => {
     return state.usersPage.users
 }
 
@@ -25,3 +27,7 @@ export const getCurrentUser = (state) => {
 export const getFollowingInProgress = (state) => {
     return state.auth.followingInProgress
 }
+
+export const getUsers = createSelector(getUsersPrimitiveSelector, getIsFetching, (users, isFetching) => {
+    return users.filter(u => u.id !== 100 || isFetching) // dummy filter for test reselector only
+})

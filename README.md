@@ -14,6 +14,7 @@
 * Faker.js
 * Axios
 * js-cookie
+* reselect
 
 ### Getting started
 
@@ -36,6 +37,8 @@ npm install redux-thunk --save
 npm install final-form react-final-form --save
 
 npm install js-cookie --save
+
+npm install reselect --save
 ```
 
 Faker.js
