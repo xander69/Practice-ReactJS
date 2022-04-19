@@ -49,7 +49,7 @@ const setUsers = (users) => ({type: SET_USERS, users})
 const setTotalUsersCount = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, totalCount})
 const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 
-export const getUsers = (pageNumber, pageSize) => {
+export const requestUsers = (pageNumber, pageSize) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true))
         usersApi.getUsers(pageNumber, pageSize)

@@ -16,8 +16,8 @@ const Users = (props) => {
         <div className={s.pagination}>
             {pages.map(page => {
                 return <NavLink to={`/users/${page}`} key={page}
-                                className={`${s.pageLink} ${props.currentPage === page ? s.selected : undefined}`}
-                                onClick={() => props.getUsers(page, props.pageSize)}>{page}</NavLink>
+                                className={`${s.pageLink} ${parseInt(props.currentPage) === page ? s.selected : undefined}`}
+                                onClick={() => props.requestUsers(page, props.pageSize)}>{page}</NavLink>
             })}
         </div>
         <UserList users={props.users}
